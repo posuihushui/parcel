@@ -20,11 +20,11 @@ html,body{height: 100%;min-width: 320px;}
     right: toPercent($right,1440);
     bottom: toPercent($bottom,800);
     left: toPercent($left,1440);
+    background-size: cover;
 }
 @mixin size($width:auto,$height:auto){
-    width: $width;
-    height: $height;
-    background-size: cover;
+    width: toPercent($width,1440);
+    height: toPercent($height,800);
 }
 
 
@@ -87,23 +87,67 @@ html,body{height: 100%;min-width: 320px;}
             top: 0;
             &.animate-frame-one{
                 .right-center{
-                    @include size(163px,40px);
-                    @include postion($top:auto,$right:10px,$bottom:240px,$left:auto);
+                    @include size(163,40);
+                    @include postion($top:auto,$right:10,$bottom:240,$left:auto);
                     box-shadow: 0 5px 10px 0 rgba(77, 240, 32, 0.4);
                     background-image: url('./home/part_2.png');
                     border-radius: 20px;
+                    animation:shake 5s infinite;
+                }
+                .right-bottom{
+                    width: 830px;
+                    height: 515px;
+                    @include postion($top:auto,$right:0,$bottom:36,$left:auto);
+                    background-image: url('./home/mokeup.png');
+                    .figure-content{
+                        width: 660px;
+                        height: 420px;
+                        position: absolute;
+                        top: 30px;
+                        right: 60px;
+                        background-image: url('./home/screen1.png');
+                        background-size: cover;
+                    }
                 }
                 .left-bottom{
-                    @include size(114px,175px);
-                    @include postion($top:auto,$right:auto,$bottom:85px,$left:350px);
+                    @include size(114,175);
+                    @include postion($top:auto,$right:auto,$bottom:85,$left:350);
                     background-image: url('./home/part_1.png');
+                    animation:shake 5s infinite;
                 }
                 .left-top{
-                    @include size(294px,212px);
-                    @include postion($top:160px,$right:auto,$bottom:auto,$left:380px);
+                    @include size(294,212);
+                    @include postion($top:85,$right:auto,$bottom:auto,$left:380);
                     background-image: url('./home/part_3.png');
+                    animation:shake 5s infinite;
                 }
             }
         }
     }
+}
+
+
+@keyframes shake {
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(0,-5px, 0);
+    opacity: .8;
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(0,5px, 0);
+    opacity: .8;
+  }
 }

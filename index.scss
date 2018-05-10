@@ -1,0 +1,109 @@
+html,body{height: 100%;min-width: 320px;}
+// 设计稿尺寸
+// $height:800;
+// $width:1440;
+@mixin width($width:1440){
+    width: toPercent($width,1440);
+}
+@mixin height($height:800){
+    height: toPercent($height,800);
+}
+@function toPercent($value,$denominator) {
+    @if($value == auto){
+        @return auto;
+    }
+   @return  $value*100/$denominator + %;
+}
+@mixin postion($top:auto,$right:auto,$bottom:auto,$left:auto){
+    position: absolute;
+    top: toPercent($top,800);
+    right: toPercent($right,1440);
+    bottom: toPercent($bottom,800);
+    left: toPercent($left,1440);
+}
+@mixin size($width:auto,$height:auto){
+    width: $width;
+    height: $height;
+    background-size: cover;
+}
+
+
+.screen-one{
+    height: 100%;
+    position: relative;
+    background: url('./home/bg.png') no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    .frame{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+        &.frame-one{
+            display: block;
+        }
+
+        .max-content {
+            width: 100%;
+            height: 100%;
+            .feature-text{
+                @include width($width:560);
+                position: absolute;
+                top: 50%;
+                left: 10%;
+                transform: translateY(-50%);
+                .title{
+                    font-family: Gotham Light;
+                    font-size: 80px;
+                    line-height: 80px;
+                    color:#1e234b;
+                    margin-bottom: 10px;
+                    .color-bule{
+                        font-family: Gotham Bold;
+                        color:#2492fc;
+                    }
+                }
+                .subtitle{
+                    font-family: Gotham Book;
+                    font-size: 36px;
+                    line-height: 40px;
+                    color:#1e234b;
+                    margin-bottom: 30px;
+                }
+                p{
+                    font-family: Gotham Book;
+                    font-size: 18px;
+                }
+            }
+        }
+        
+        .frame-animate{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            &.animate-frame-one{
+                .right-center{
+                    @include size(163px,40px);
+                    @include postion($top:auto,$right:10px,$bottom:240px,$left:auto);
+                    box-shadow: 0 5px 10px 0 rgba(77, 240, 32, 0.4);
+                    background-image: url('./home/part_2.png');
+                    border-radius: 20px;
+                }
+                .left-bottom{
+                    @include size(114px,175px);
+                    @include postion($top:auto,$right:auto,$bottom:85px,$left:350px);
+                    background-image: url('./home/part_1.png');
+                }
+                .left-top{
+                    @include size(294px,212px);
+                    @include postion($top:160px,$right:auto,$bottom:auto,$left:380px);
+                    background-image: url('./home/part_3.png');
+                }
+            }
+        }
+    }
+}

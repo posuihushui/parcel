@@ -1,3 +1,4 @@
+@import './screenAnimate.scss';
 html,body{height: 100%;min-width: 320px;}
 // 设计稿尺寸
 // $height:800;
@@ -92,7 +93,6 @@ html,body{height: 100%;min-width: 320px;}
                     box-shadow: 0 5px 10px 0 rgba(77, 240, 32, 0.4);
                     background-image: url('./home/part_2.png');
                     border-radius: 20px;
-                    animation:shake 0.4s cubic-bezier(0,0,0.58,1) infinite alternate;
                 }
                 .right-bottom{
                     width: 830px;
@@ -113,7 +113,6 @@ html,body{height: 100%;min-width: 320px;}
                     @include size(114,175);
                     @include postion($top:auto,$right:auto,$bottom:85,$left:350);
                     background-image: url('./home/part_1.png');
-                    animation:shake 5s infinite;
                 }
                 .left-top{
                     @include size(294,212);
@@ -130,10 +129,10 @@ html,body{height: 100%;min-width: 320px;}
 @keyframes shake {
   from{
     transform: translate3d(0,5px, 0);
-    opacity: 0;
+    opacity: 1;
   }
   to {
     transform: translate3d(0, 0, 0);
-    opacity: 1;
+    opacity: .85;
   }
 }

@@ -1,28 +1,31 @@
 // 所有无限滚动动画
-@each $name, $move ,$opacityStart,$opacityEnd in (move-1, 4px,1,.85),
-                        (move-2, 4px,.85,1),
-                        (move-3, 6px,1,.85),
-                        (move-4, 6px,.85,1),
-                        (move-5, 10px,1,.85),
-                        (move-6, 10px,.85,1){
+@each $name, $move in (move-1, 4px),
+                      (move-2, 6px),
+                      (move-3, 10px){
   .#{$name} {
     animation: $name+-easeinout 1s cubic-bezier(0.4,0.25,0.55,0.8) infinite alternate,
                $name+-line 1s linear infinite alternate;
   }
   @keyframes #{$name}-easeinout {
-      from{
+      0%{
         transform: translate3d(0,$move, 0);
       }
-      to{
+      50%{
         transform: translate3d(0,0, 0);
+      }
+      100%{
+        transform: translate3d(0,-$move, 0);
       }
   }
   @keyframes #{$name}-line {
-      from{
-        opacity: $opacityStart;
+      0%{
+        opacity: 1;
       }
-      to{
-        opacity: $opacityEnd;
+      50%{
+        opacity: .85;
+      }
+      100%{
+        opacity: 1;
       }
   }
 }

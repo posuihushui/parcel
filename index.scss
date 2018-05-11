@@ -27,7 +27,7 @@ html,body{height: 100%;min-width: 320px;}
     height: toPercent($height,800);
 }
 
-
+.no-opacity{opacity: 0;}
 .screen-one{
     height: 100%;
     position: relative;
@@ -54,6 +54,7 @@ html,body{height: 100%;min-width: 320px;}
                 top: 50%;
                 left: 10%;
                 transform: translateY(-50%);
+                z-index: 2;
                 .title{
                     font-family: Gotham Light;
                     font-size: 80px;
@@ -78,7 +79,6 @@ html,body{height: 100%;min-width: 320px;}
                 }
             }
         }
-        
         .frame-animate{
             position: absolute;
             width: 100%;

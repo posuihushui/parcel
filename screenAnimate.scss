@@ -9,20 +9,14 @@
   }
   @keyframes #{$name}-easeinout {
       0%{
-        transform: translate3d(0,$move, 0);
-      }
-      50%{
         transform: translate3d(0,0, 0);
       }
       100%{
-        transform: translate3d(0,-$move, 0);
+        transform: translate3d(0,$move, 0);
       }
   }
   @keyframes #{$name}-line {
       0%{
-        opacity: 1;
-      }
-      50%{
         opacity: .85;
       }
       100%{
@@ -45,15 +39,18 @@
                       (switch-in-4, 0,.5s)
 {
   .#{$name} {
+    transform: translate3d(0,$move, 0);
+    opacity: 0;
     animation: $name+-easeout $duration cubic-bezier(0,0,0.58,1),
                $name+-line  $duration linear;
+    animation-fill-mode:forwards;
   }
   @keyframes #{$name}-easeout {
       0%{
-        transform: translate3d(0,0, 0);
+        transform: translate3d(0,$move, 0);
       }
       100%{
-        transform: translate3d(0,$move, 0);
+        transform: translate3d(0,0, 0);
       }
   }
   @keyframes #{$name}-line {

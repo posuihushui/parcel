@@ -9,8 +9,9 @@ let timeDelay = (time=500)=>new Promise((resolve)=>{
     }, time);
 })
 
-console.log('callinxxxxg');
+console.log('xxxxxxxx');
 (async function (){
+    console.log('begin first screen')
     // 延时0ms html
     // 时刻100ms
     await timeDelay(100);
@@ -38,5 +39,25 @@ console.log('callinxxxxg');
     await timeDelay(300);
     console.log('1200ms')
     $('.frame-one .part3').removeClass('slide-in-3').addClass('move-3');
-     
+    
+    // 目测无限滚动时间为2s
+    await timeDelay(2000);
+    console.log('3200ms')
+    $('.frame-one .part1').removeClass('move-1').addClass('switch-out-1');
+    $('.frame-one .part2').removeClass('move-2').addClass('switch-out-1');
+    $('.frame-one .part3').removeClass('move-3').addClass('switch-out-1');
+
+    await timeDelay(300);
+    console.log('3500ms')
+    $('.frame-one .part1,.frame-one .part2,.frame-one .part3').removeClass('switch-out-1').addClass('no-opacity');
+
+    await timeDelay(200);
+    console.log('3700ms')
+    $('.frame-one .part-screen.figure-content').removeClass('slide-in-5').addClass('no-opacity');
+    // 总时长3800ms
+    console.log('first screen end');
+
+
+    console.log('begin loop')
+    
 })();

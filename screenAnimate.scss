@@ -1,7 +1,8 @@
 // 所有无限滚动动画
 @each $name, $move in (move-1, 4px),
                       (move-2, 6px),
-                      (move-3, 10px){
+                      (move-3, 10px)
+{
   .#{$name} {
     animation: $name+-easeinout 1s cubic-bezier(0.4,0.25,0.55,0.8) infinite alternate,
                $name+-line 1s linear infinite alternate;
@@ -26,6 +27,58 @@
       }
       100%{
         opacity: 1;
+      }
+  }
+}
+
+// 页面加的动画 + 元素切入动画
+@each $name, $move, $duration in (slide-in-1, 40px,.4s),
+                      (slide-in-2, 60px,.5s),
+                      (slide-in-3, 80px,.6s),
+                      (slide-in-4, 0,.4s),
+                      (slide-in-5, 0,.5s),
+                      (slide-in-6, 50px,.3s),
+                      (slide-in-7, 50px,.4s),
+                      (switch-in-1, 40px,.4s),
+                      (switch-in-2, 60px,.5s),
+                      (switch-in-3, 80px,.6s),
+                      (switch-in-4, 0,.5s)
+{
+  .#{$name} {
+    animation: $name+-easeout $duration cubic-bezier(0,0,0.58,1),
+               $name+-line  $duration linear;
+  }
+  @keyframes #{$name}-easeout {
+      0%{
+        transform: translate3d(0,0, 0);
+      }
+      100%{
+        transform: translate3d(0,$move, 0);
+      }
+  }
+  @keyframes #{$name}-line {
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 1;
+      }
+  }
+}
+
+// 元素的切出
+@each $name, $duration in (switch-out-1, .3s),
+                      (switch-out-2, .1s)
+{
+  .#{$name} {
+    animation: $name+-line $duration linear;
+  }
+  @keyframes #{$name}-line {
+      0%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0;
       }
   }
 }

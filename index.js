@@ -2,12 +2,16 @@ import "./setting.scss";
 import './screenAnimate.scss';
 import "./index.scss";
 
-
-let timeDelay = (time = 500) => new Promise((resolve) => {
+let timeDelay = (time = 500,cb) => new Promise((resolve) => {
     setTimeout(() => {
+        cb && cb();
         resolve();
     }, time);
-})
+});
+
+function excuteQueue([...timeCallStack]) {
+    timeCallStack.map((e) => timeDelay(e.time, e.cb)).reduce((pre, cur) => pre.then(cur), Promise.resolve());
+} 
 async function loadFrame(frameClass = 'animate-frame-one') {
     $(`.${frameClass} .part-screen.figure-content`).removeClass('no-opacity').addClass('slide-in-5');
     await timeDelay(500);
@@ -69,9 +73,8 @@ let frameClassList = ['animate-frame-one', 'animate-frame-two', 'animate-frame-t
 var timeCallStack = [
     {
         time: 100,
-        cb(task) {
+        cb() {
             console.log(100)
-            task
         }
     },
     {
@@ -93,3 +96,5 @@ var timeCallStack = [
         }
     }
 ];
+
+excuteQueue(timeCallStack);

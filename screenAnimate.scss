@@ -26,28 +26,34 @@
 }
 
 // 页面加的动画 + 元素切入动画
-@each $name, $move, $duration in (slide-in-1, 40px,.4s),
-                      (slide-in-2, 60px,.5s),
-                      (slide-in-3, 80px,.6s),
-                      (slide-in-4, 0,.4s),
-                      (slide-in-5, 0,.5s),
-                      (slide-in-6, 50px,.3s),
-                      (slide-in-7, 50px,.4s)
-                    //   (switch-in-1, 40px,.4s), 同slide-in-1~4
-                    //   (switch-in-2, 60px,.5s),
-                    //   (switch-in-3, 80px,.6s),
-                    //   (switch-in-4, 0,.5s)
+@each $name, $moveX,$moveY,$opacity, $duration ,$moveFuction,$opacityFunction in
+                      // 首屏进入的参数
+                      (slide-in-1, 40px,0,0,.4s,cubic-bezier(0,0,0.58,1),linear),
+                      (slide-in-2, 60px,0,0,.5s,cubic-bezier(0,0,0.58,1),linear),
+                      (slide-in-3, 80px,0,0,.6s,cubic-bezier(0,0,0.58,1),linear),
+                      (slide-in-4, 0,0,0,.4s,cubic-bezier(0,0,0.58,1),linear),
+                      (slide-in-5, 0,0,0,.5s,cubic-bezier(0,0,0.58,1),linear),
+                      (slide-in-6, 50px,0,0,.3s,cubic-bezier(0,0,0.58,1),linear),
+                      (slide-in-7, 50px,0,0,.4s,cubic-bezier(0,0,0.58,1),linear),
+                      (slide-in-7, 50px,0,0,.4s,cubic-bezier(0,0,0.58,1),linear),
+                      // 竖向屏切换的参数
+                      (screen-in-1,850px,0,1,.6s,cubic-bezier(0.25,0.1,0.25,0.1),linear),
+                      (screen-in-2,955px,0,1,.6s,cubic-bezier(0.25,0.1,0.25,0.1),linear),
+                      (screen-in-3,1150px,0,1,.6s,cubic-bezier(0.25,0.1,0.25,0.1),linear),
+                      (screen-in-4,100px,0,0,.6s,cubic-bezier(0.25,0.1,0.25,0.1),cubic-bezier(0.25,0.1,0.25,0.1)), // screen-in-4,screen-in-5
+                      (screen-in-5,0,0,0,1s,cubic-bezier(0.25,0.1,0.25,0.1),cubic-bezier(0.25,0.1,0.25,0.1)), // screen-in-6,screen-in-7
+                      (screen-in-6,800px,670px,0,.8s,cubic-bezier(0.25,0.1,0.25,0.1),linear), // screen-in-6,screen-in-7
 {
   .#{$name} {
-    transform: translate3d(0,$move, 0);
+    transform: translate3d(0,$moveX, $moveY);
     opacity: 0;
-    animation: $name+-easeout $duration cubic-bezier(0,0,0.58,1),
-               $name+-line  $duration linear;
+    animation: $name+-easeout $duration $moveFuction,
+               $name+-line  $duration $opacityFunction;
     animation-fill-mode:forwards;
   }
   @keyframes #{$name}-easeout {
       0%{
-        transform: translate3d(0,$move, 0);
+        transform: translate3d(0,$moveX, $moveY);
       }
       100%{
         transform: translate3d(0,0, 0);
@@ -55,7 +61,7 @@
   }
   @keyframes #{$name}-line {
       0%{
-        opacity: 0;
+        opacity: $opacity;
       }
       100%{
         opacity: 1;

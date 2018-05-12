@@ -32,11 +32,11 @@
                       (slide-in-4, 0,.4s),
                       (slide-in-5, 0,.5s),
                       (slide-in-6, 50px,.3s),
-                      (slide-in-7, 50px,.4s),
-                      (switch-in-1, 40px,.4s),
-                      (switch-in-2, 60px,.5s),
-                      (switch-in-3, 80px,.6s),
-                      (switch-in-4, 0,.5s)
+                      (slide-in-7, 50px,.4s)
+                    //   (switch-in-1, 40px,.4s), 同slide-in-1~4
+                    //   (switch-in-2, 60px,.5s),
+                    //   (switch-in-3, 80px,.6s),
+                    //   (switch-in-4, 0,.5s)
 {
   .#{$name} {
     transform: translate3d(0,$move, 0);

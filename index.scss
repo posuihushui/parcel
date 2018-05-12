@@ -76,6 +76,7 @@ html,body{height: 100%;min-width: 320px;}
                 p{
                     font-family: Gotham Book;
                     font-size: 18px;
+                    color:#7585b1;
                 }
             }
         }
@@ -100,31 +101,107 @@ html,body{height: 100%;min-width: 320px;}
             left: 0;
             top: 0;
             &.animate-frame-one{
-                .right-center{
+                .figure-content{
+                    width: 830px;
+                    height: 515px;
+                    @include postion($top:auto,$right:0,$bottom:36,$left:auto);
+                    background-image: url('./home/screen1@2x.png');
+                }
+                .part1{
+                    @include size(114,175);
+                    @include postion($top:auto,$right:auto,$bottom:85,$left:350);
+                    background-image: url('./home/part_1.png');
+                }
+                .part2{
                     @include size(163,40);
                     @include postion($top:auto,$right:10,$bottom:240,$left:auto);
                     box-shadow: 0 5px 10px 0 rgba(77, 240, 32, 0.4);
                     background-image: url('./home/part_2.png');
                     border-radius: 20px;
                 }
-                .right-bottom.figure-content{
-                    width: 830px;
-                    height: 515px;
-                    @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                    background-image: url('./home/mokeup.png');
-                    background-image: url('./home/screen1@2x.png');
-                }
-                .left-bottom{
-                    @include size(114,175);
-                    @include postion($top:auto,$right:auto,$bottom:85,$left:350);
-                    background-image: url('./home/part_1.png');
-                }
-                .left-top{
+                .part3{
                     @include size(294,212);
                     @include postion($top:85,$right:auto,$bottom:auto,$left:380);
                     background-image: url('./home/part_3.png');
                 }
             }
+
+            &.animate-frame-two{
+                .figure-content{
+                    width: 830px;
+                    height: 515px;
+                    @include postion($top:auto,$right:0,$bottom:36,$left:auto);
+                    background-image: url('./home/screen2@2x.png');
+                }
+                .part1{
+                    @include size(140,200);
+                    @include postion($top:auto,$right:20,$bottom:146,$left:auto);
+                    background-image: url('./home/part_4.png');
+                    box-shadow: 0 10px 20px 0 rgba(57, 145, 230, 0.5);
+                }
+                .part2{
+                    @include size(116,77);
+                    @include postion($top:202,$right:777,$bottom:auto,$left:auto);
+                    background-image: url('./home/part_5.png');
+                }
+                .part3{
+                    @include size(230,150);
+                    @include postion($top:85,$right:auto,$bottom:auto,$left:380);
+                    background-image: url('./home/part_6.png');
+                }
+            }
+
+            &.animate-frame-three{
+                .figure-content{
+                    width: 830px;
+                    height: 515px;
+                    @include postion($top:auto,$right:0,$bottom:36,$left:auto);
+                    background-image: url('./home/screen3@2x.png');
+                }
+                .part1{
+                    @include size(230,150);
+                    @include postion($top:auto,$right:auto,$bottom:110,$left:430);
+                    background-image: url('./home/part_7.png');
+                }
+                .part2{
+                    @include size(200,96);
+                    @include postion($top:auto,$right:20,$bottom:284,$left:auto);
+                    background-image: url('./home/part_8.png');
+                    box-shadow: 0 10px 20px 0 rgba(81, 156, 227, 0.3);
+                }
+                .part3{
+                    @include size(184,122);
+                    @include postion($top:140,$right:auto,$bottom:auto,$left:330);
+                    background-image: url('./home/part_9.png');
+                }
+            }
+
+            &.animate-frame-four{
+                .figure-content{
+                    width: 830px;
+                    height: 515px;
+                    @include postion($top:auto,$right:0,$bottom:36,$left:auto);
+                    background-image: url('./home/screen4@2x.png');
+                }
+                .part1{
+                    @include size(160,88);
+                    @include postion($top:auto,$right:auto,$bottom:212,$left:270);
+                    background-image: url('./home/part_10.png');
+                }
+                .part2{
+                    @include size(160,160);
+                    @include postion($top:190,$right:150,$bottom:auto,$left:auto);
+                    background-image: url('./home/part_11.png');
+                    box-shadow: 0 10px 20px 0 rgba(173, 220, 238, 0.5);
+                }
+                .part3{
+                    @include size(193,123);
+                    @include postion($top:100,$right:auto,$bottom:auto,$left:600);
+                    background-image: url('./home/part_12.png');
+                }
+            }
+
+            
         }
     }
 }

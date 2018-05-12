@@ -1,10 +1,13 @@
 // 所有无限滚动动画
-@each $name, $move in (move-1, 4px),
-                      (move-2, 6px),
-                      (move-3, 10px),
-                      (screen-move-1,4px),
-                      (screen-move-2,6px),
-                      (screen-move-3,10px)
+@each $name, $move in 
+            // 首屏进入的参数
+            (move-1, 4px),
+            (move-2, 6px),
+            (move-3, 10px),
+            // 非首屏进入的参数
+            (screen-move-1,4px),
+            (screen-move-2,6px),
+            (screen-move-3,10px)
 {
   .#{$name} {
     animation: $name+-easeinout 1s cubic-bezier(0.4,0.25,0.55,0.8) infinite alternate,
@@ -38,7 +41,7 @@
                       (slide-in-5, 0,0,0,.5s,cubic-bezier(0,0,0.58,1),linear),
                       (slide-in-6, 50px,0,0,.3s,cubic-bezier(0,0,0.58,1),linear),
                       (slide-in-7, 50px,0,0,.4s,cubic-bezier(0,0,0.58,1),linear),
-                      // 竖向屏切换的参数
+                      // 非首屏切换的参数
                       (screen-in-1,850px,0,1,.6s,cubic-bezier(0.25,0.1,0.25,0.1),linear),
                       (screen-in-2,955px,0,1,.6s,cubic-bezier(0.25,0.1,0.25,0.1),linear),
                       (screen-in-3,1150px,0,1,.6s,cubic-bezier(0.25,0.1,0.25,0.1),linear),
@@ -71,7 +74,7 @@
   }
 }
 
-// 元素的切出
+// 首屏元素的切出
 @each $name, $duration in (switch-out-1, .3s),
                       (switch-out-2, .1s)
 {
@@ -84,6 +87,23 @@
       }
       100%{
         opacity: 0;
+      }
+  }
+}
+
+// 非首屏元素的切出
+@each $name, $move,$duration in (screen-out-1,800px, .6s),
+                                (screen-out-2, 660px,.6s)
+{
+  .#{$name} {
+    animation: $name+-easeinout $duration cubic-bezier(0.25,0.1,0.25,0.1);
+  }
+  @keyframes #{$name}-easeinout {
+      0%{
+        transform: translate3d(0,0, 0);
+      }
+      100%{
+        transform: translate3d(0,$move, 0);
       }
   }
 }

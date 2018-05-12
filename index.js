@@ -3,12 +3,12 @@ import './screenAnimate.scss';
 import "./index.scss";
 
 
-let timeDelay = (time=500)=>new Promise((resolve)=>{
+let timeDelay = (time = 500) => new Promise((resolve) => {
     setTimeout(() => {
         resolve();
     }, time);
 })
-async function loadFrame(frameClass ='animate-frame-one') {
+async function loadFrame(frameClass = 'animate-frame-one') {
     $(`.${frameClass} .part-screen.figure-content`).removeClass('no-opacity').addClass('slide-in-5');
     await timeDelay(500);
     $(`.${frameClass} .part1`).removeClass('no-opacity').addClass('slide-in-1');
@@ -43,16 +43,16 @@ async function loadFrame(frameClass ='animate-frame-one') {
 
 }
 
-let frameClassList = ['animate-frame-one', 'animate-frame-two', 'animate-frame-three','animate-frame-four'],
+let frameClassList = ['animate-frame-one', 'animate-frame-two', 'animate-frame-three', 'animate-frame-four'],
     len = frameClassList.length,
     currenFrameIndex = 0;
-(async function (){
+(async function () {
     await timeDelay(100);
     $('.p-box').removeClass('no-opacity').addClass('slide-in-7');
 
     setInterval(() => {
-        if (currenFrameIndex >= len){
-            currenFrameIndex  = 0;
+        if (currenFrameIndex >= len) {
+            currenFrameIndex = 0;
         }
         loadFrame(frameClassList[currenFrameIndex]);
         currenFrameIndex++;
@@ -61,5 +61,35 @@ let frameClassList = ['animate-frame-one', 'animate-frame-two', 'animate-frame-t
     // 初始化
     loadFrame(frameClassList[0]);
     currenFrameIndex++;
-    
+
 })();
+
+
+// 因为每项逻辑相似，以高阶函数递归的形式组织代码
+var timeCallStack = [
+    {
+        time: 100,
+        cb(task) {
+            console.log(100)
+            task
+        }
+    },
+    {
+        time: 200,
+        cb() {
+            console.log(200)
+        }
+    },
+    {
+        time: 300,
+        cb() {
+            console.log(300)
+        }
+    },
+    {
+        time: 300,
+        cb() {
+            console.log(400)
+        }
+    }
+];

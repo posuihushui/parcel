@@ -52,7 +52,7 @@ let frameClassList = ['animate-frame-one', 'animate-frame-two', 'animate-frame-t
     currenFrameIndex = 0;
 (async function () {
     await timeDelay(100);
-    $('.p-box').removeClass('no-opacity').addClass('slide-in-7');
+    $('.screen-one .p-box').removeClass('no-opacity').addClass('slide-in-7');
 
     setInterval(() => {
         if (currenFrameIndex >= len) {

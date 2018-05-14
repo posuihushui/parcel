@@ -21,7 +21,8 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     right: toPercent($right,1440);
     bottom: toPercent($bottom,800);
     left: toPercent($left,1440);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 @mixin size($width:auto,$height:auto){
     width: toPercent($width,1440);
@@ -111,7 +112,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 .part2{
                     @include size(163,40);
                     @include postion($top:auto,$right:10,$bottom:240,$left:auto);
-                    box-shadow: 0 5px 10px 0 rgba(77, 240, 32, 0.4);
+                    // box-shadow: 0 5px 10px 0 rgba(77, 240, 32, 0.4);
                     background-image: url('./home/part_2.png');
                     border-radius: 20px;
                 }
@@ -133,7 +134,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     @include size(140,200);
                     @include postion($top:auto,$right:20,$bottom:146,$left:auto);
                     background-image: url('./home/part_4.png');
-                    box-shadow: 0 10px 20px 0 rgba(57, 145, 230, 0.5);
+                    // box-shadow: 0 10px 20px 0 rgba(57, 145, 230, 0.5);
                 }
                 .part2{
                     @include size(116,77);
@@ -163,7 +164,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     @include size(200,96);
                     @include postion($top:auto,$right:20,$bottom:284,$left:auto);
                     background-image: url('./home/part_8.png');
-                    box-shadow: 0 10px 20px 0 rgba(81, 156, 227, 0.3);
+                    // box-shadow: 0 10px 20px 0 rgba(81, 156, 227, 0.3);
                 }
                 .part3{
                     @include size(184,122);
@@ -188,7 +189,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     @include size(160,160);
                     @include postion($top:190,$right:150,$bottom:auto,$left:auto);
                     background-image: url('./home/part_11.png');
-                    box-shadow: 0 10px 20px 0 rgba(173, 220, 238, 0.5);
+                    // box-shadow: 0 10px 20px 0 rgba(173, 220, 238, 0.5);
                 }
                 .part3{
                     @include size(193,123);
@@ -217,7 +218,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             cursor: pointer;
             margin: auto;
             background-image: linear-gradient(to bottom, #31a5ff, #1197ff);
-            box-shadow: 0 15px 30px 0 rgba(33, 149, 240, 0.6);
+            // box-shadow: 0 15px 30px 0 rgba(33, 149, 240, 0.6);
         }
     }
 }
@@ -277,8 +278,37 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     background-size: cover;
     @content;
 }
-// special
+// special;
 .screen-two{
+    .screen-figure{
+        z-index: 1;
+        .card-people{
+            @include size(307,260);
+            @include postion($top:auto,$right:auto,$bottom:62,$left:150);
+            background-image: url('./home/2_people.png');
+        }
+        .card-zu-1{
+            @include size(605,294);
+            @include postion($top:auto,$right:auto,$bottom:146,$left:150);
+            background-image: url('./home/2_card_zu_1.png');
+        }
+        .card-zu-2{
+            @include size(428,244);
+            @include postion($top:auto,$right:auto,$bottom:248,$left:165);
+            background-image: url('./home/2_card_zu_2.png');
+        }
+        .card-zu-3{
+            @include size(327,291);
+            @include postion($top:auto,$right:auto,$bottom:277,$left:325);
+            background-image: url('./home/2_card_zu_3.png');
+        }
+        .card-zu-4{
+            @include size(375,239);
+            @include postion($top:auto,$right:auto,$bottom:319,$left:290);
+            background-image: url('./home/2_card_zu_4.png');
+        }
+        
+    }
     .screen-text{
         background-color: #ebf5ff;
         .text-box{
@@ -289,12 +319,15 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             .text-p{
                 color:#7585b1;
             }
-            .jump-detail{
-                font-size: 16px;
-                line-height: 30px;
-                .btn-bg{
-                    @include btn-bg(60px);
-                    background-image: url('./home/2_btn.png');
+            .btn-box{
+                display: flex;
+                .jump-detail{
+                    font-size: 16px;
+                    line-height: 30px;
+                    .btn-bg{
+                        @include btn-bg(60px);
+                        background-image: url('./home/2_btn.png');
+                    }
                 }
             }
         }
@@ -303,11 +336,56 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 
 .screen-three{
     background-image: linear-gradient(180deg,#b4dfff,#81abd8);
+    .screen-figure{
+        z-index: 1;
+        .card-people{
+            @include size(382,231);
+            @include postion($top:auto,$right:160,$bottom:51,$left:auto);
+            background-image: url('./home/3_peo.png');
+        }
+        .card-zu-1{
+            @include size(62,97);
+            @include postion($top:auto,$right:366,$bottom:270,$left:auto);
+            background-image: url('./home/3_card_zu_1.png');
+            z-index: 1;
+        }
+        .card-zu-2{
+            @include size(176,179);
+            @include postion($top:auto,$right:315,$bottom:241,$left:auto);
+            background-image: url('./home/3_card_zu_2.png');
+        }
+        .card-zu-3{
+            @include size(424,337);
+            @include postion($top:auto,$right:266,$bottom:268,$left:auto);
+            background-image: url('./home/3_card_zu_3.png');
+        }
+        .card-zu-4{
+            @include size(482,398);
+            @include postion($top:auto,$right:238,$bottom:234,$left:auto);
+            background-image: url('./home/3_card_zu_4.png');
+        }
+        .card-fu-1{
+            @include size(125,94);
+            @include postion($top:auto,$right:529,$bottom:208,$left:auto);
+            background-image: url('./home/3_fu_card1.png');
+        }
+        .card-fu-2{
+            @include size(115,125);
+            @include postion($top:auto,$right:424,$bottom:292,$left:auto);
+            background-image: url('./home/3_fu_card2.png');
+        }
+        .card-fu-3{
+            @include size(84,111);
+            @include postion($top:auto,$right:236,$bottom:373,$left:auto);
+            background-image: url('./home/3_fu_card3.png');
+        }
+        
+    }
     .screen-text{
         .text-box{
             @include postion($top:320,$right:80,$bottom:auto,$left:auto);
             z-index: 1;
-            top: 19%;
+            top: 20%;
             color:#ffffff;
             text-align: right;
             .btn-box{
@@ -332,6 +410,26 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 
 .screen-four{
+    .screen-figure{
+        z-index: 1;
+        .card-zu-1{
+            @include size(62,97);
+            @include postion($top:auto,$right:366,$bottom:270,$left:auto);
+            background-image: url('./home/3_card_zu_1.png');
+            z-index: 1;
+        }
+        .card-zu-2{
+            @include size(176,179);
+            @include postion($top:auto,$right:315,$bottom:241,$left:auto);
+            background-image: url('./home/3_card_zu_2.png');
+        }
+        .card-zu-3{
+            @include size(424,337);
+            @include postion($top:auto,$right:266,$bottom:268,$left:auto);
+            background-image: url('./home/3_card_zu_3.png');
+        }
+        
+    }
     .screen-text{
         background-color: #ebf5ff;
         .text-box{
@@ -356,6 +454,44 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 
 .screen-five{
     background-image: linear-gradient(180deg,#4a6dc9,#384496);
+     .screen-figure{
+        z-index: 1;
+        .card-people{
+            @include size(320,299);
+            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+            background-image: url('./home/5_peo.png');
+        }
+        .card-zu-1{
+            @include size(62,97);
+            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+            z-index: 1;
+        }
+        .card-zu-2{
+            @include size(176,179);
+            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+        }
+        .card-zu-3{
+            @include size(424,337);
+            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+        }
+        .card-zu-4{
+            @include size(482,398);
+            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+        }
+        .card-fu-1{
+            @include size(125,94);
+            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+        }
+        .card-fu-2{
+            @include size(115,125);
+            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+        }
+        .card-fu-3{
+            @include size(84,111);
+            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+        }
+        
+    }
     .screen-text{
         .text-box{
             @include postion($top:300,$right:auto,$bottom:auto,$left:80);
@@ -370,7 +506,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 line-height: 30px;
                 .btn-bg{
                     @include btn-bg(60px);
-                    background-image: url('./home/2_btn.png');
+                    background-image: url('./home/5_btn.png');
                 }
             }
         }

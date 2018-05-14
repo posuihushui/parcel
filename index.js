@@ -195,15 +195,16 @@ let fourthScreenComeStalk = [
     }];
 excuteQueue(fourthScreenComeStalk);
 
-let fifthScreenComeStalk = [{
-    time: 0, // 进入，不结束
-    cb() {
-        $('.screen-five .h-box').removeClass('no-opacity').addClass('screen-in-1');
-        $('.screen-five .p-box').removeClass('no-opacity').addClass('screen-in-2');
-        $('.screen-five .btn-box').removeClass('no-opacity').addClass('screen-in-3');
-        $('.screen-five .card-people').removeClass('no-opacity').addClass('screen-in-6');
-    }
-}, {
+let fifthScreenComeStalk = [
+    {
+        time: 0, // 进入，不结束
+        cb() {
+            $('.screen-five .h-box').removeClass('no-opacity').addClass('screen-in-1');
+            $('.screen-five .p-box').removeClass('no-opacity').addClass('screen-in-2');
+            $('.screen-five .btn-box').removeClass('no-opacity').addClass('screen-in-3');
+            $('.screen-five .card-people').removeClass('no-opacity').addClass('screen-in-6');
+        }
+    }, {
         time: 500, // 500开始，1100结束
         cb() {
             $('.screen-five .card-zu-1').removeClass('no-opacity').addClass('screen-in-4');

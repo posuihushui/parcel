@@ -2,6 +2,7 @@ html,body{height: 100%;min-width: 320px;}
 // 设计稿尺寸
 // $height:800;
 // $width:1440;
+$font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 @mixin width($width:1440){
     width: toPercent($width,1440);
 }
@@ -221,3 +222,157 @@ html,body{height: 100%;min-width: 320px;}
     }
 }
 
+// 公共部分
+.h-box{
+    margin-bottom: 20px;
+    .text-h{
+        font-family: Gotham Light;
+        font-size: 60px;
+        line-height: 65px;
+        .b-bold{
+            font-family: Gotham Bold;
+        }
+    }
+}
+
+.p-box{
+    margin-bottom: 40px;
+    .text-p{
+        font-family: $font-family;
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+
+.screen-titile{
+    font-family: Gotham Bold;
+    font-size: 300px;
+    @include postion($top:84,$right:0,$bottom:auto,$left:0);
+    color:#f0f7ff;
+    margin: auto;
+    text-align: center;
+    z-index: 1;
+}
+.screen-figure{
+    width: 50%;
+    height: 100%;
+}
+.screen-text{
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+.screen-vertical{
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+}
+@mixin btn-bg($width:60px){
+    width: $width;
+    height: $width;
+    display: inline-block;
+    background-size: cover;
+    @content;
+}
+// special
+.screen-two{
+    .screen-text{
+        background-color: #ebf5ff;
+        .text-box{
+            @include postion($top:300,$right:auto,$bottom:auto,$left:80);
+            z-index: 1;
+            top: 19%;
+            color:#414676;
+            .text-p{
+                color:#7585b1;
+            }
+            .jump-detail{
+                font-size: 16px;
+                line-height: 30px;
+                .btn-bg{
+                    @include btn-bg(60px);
+                    background-image: url('./home/2_btn.png');
+                }
+            }
+        }
+    }
+}
+
+.screen-three{
+    background-image: linear-gradient(180deg,#b4dfff,#81abd8);
+    .screen-text{
+        .text-box{
+            @include postion($top:320,$right:80,$bottom:auto,$left:auto);
+            z-index: 1;
+            top: 19%;
+            color:#ffffff;
+            text-align: right;
+            .btn-box{
+                display: flex;
+                .jump-detail{
+                    display: flex;
+                    height: 30px;
+                    line-height: 30px;
+                    margin-left: 30px;
+                    color:#fff;
+                    .btn-bg{
+                        @include btn-bg(30px){
+                            background-image: url('./home/5_btn.png');
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+.screen-four{
+    .screen-text{
+        background-color: #ebf5ff;
+        .text-box{
+            @include postion($top:300,$right:auto,$bottom:auto,$left:80);
+            z-index: 1;
+            top: 19%;
+            color:#414676;
+            .text-p{
+                color:#7585b1;
+            }
+            .jump-detail{
+                font-size: 16px;
+                line-height: 30px;
+                .btn-bg{
+                    @include btn-bg(60px);
+                    background-image: url('./home/2_btn.png');
+                }
+            }
+        }
+    }
+}
+
+.screen-five{
+    background-image: linear-gradient(180deg,#4a6dc9,#384496);
+    .screen-text{
+        .text-box{
+            @include postion($top:300,$right:auto,$bottom:auto,$left:80);
+            z-index: 1;
+            top: 19%;
+            color:#FFF;
+            .text-p{
+                color:#7585b1;
+            }
+            .jump-detail{
+                font-size: 16px;
+                line-height: 30px;
+                .btn-bg{
+                    @include btn-bg(60px);
+                    background-image: url('./home/2_btn.png');
+                }
+            }
+        }
+    }
+}

@@ -149,11 +149,22 @@ let thirdScreenComeStalk = [
         cb() {
             $('.screen-three .card-zu-3').removeClass('screen-in-4').addClass('screen-move-3');
         }
-    },{
+    }, {
         time: 100, // 1600开始  2200 结束
         cb() {
             $('.screen-three .card-fu-1').removeClass('no-opacity').addClass('screen-in-5');
             $('.screen-three .card-fu-3').removeClass('no-opacity').addClass('screen-in-5');
+        }
+    }, {
+        time: 400, // 2000
+        cb() {
+            $('.screen-three .card-fu-2').removeClass('screen-in-5').addClass('screen-move-1');
+        }
+    }, {
+        time: 200, // 2200
+        cb() {
+            $('.screen-three .card-fu-1').removeClass('screen-in-5').addClass('screen-move-1');
+            $('.screen-three .card-fu-3').removeClass('screen-in-5').addClass('screen-move-2');
         }
     }];
 
@@ -165,44 +176,59 @@ let fourthScreenComeStalk = [
     {
         time: 0, // 进入，不结束
         cb() {
-            $('.screen-three .h-box').removeClass('no-opacity').addClass('screen-in-1');
-            $('.screen-three .p-box').removeClass('no-opacity').addClass('screen-in-2');
-            $('.screen-three .btn-box').removeClass('no-opacity').addClass('screen-in-3');
-            $('.screen-three .card-people').removeClass('no-opacity').addClass('screen-in-6');
+            $('.screen-four .h-box').removeClass('no-opacity').addClass('screen-in-1');
+            $('.screen-four .p-box').removeClass('no-opacity').addClass('screen-in-2');
+            $('.screen-four .btn-box').removeClass('no-opacity').addClass('screen-in-3');
+            $('.screen-four .card-people').removeClass('no-opacity').addClass('screen-in-6');
         }
     }, {
         time: 500, // 500开始，1100结束
         cb() {
-            $('.screen-three .card-zu-1').removeClass('no-opacity').addClass('screen-in-4');
-            $('.screen-three .card-zu-2').removeClass('no-opacity').addClass('screen-in-2');
+            $('.screen-four .card-zu-1').removeClass('no-opacity').addClass('screen-in-4');
+            $('.screen-four .card-zu-2').removeClass('no-opacity').addClass('screen-in-2');
         }
     }, {
         time: 200, // 700开始,1300结束，+ 延时200s
         cb() {
-            $('.screen-three .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
+            $('.screen-four .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
+        }
+    }];
+excuteQueue(fourthScreenComeStalk);
+
+let fifthScreenComeStalk = [{
+    time: 0, // 进入，不结束
+    cb() {
+        $('.screen-five .h-box').removeClass('no-opacity').addClass('screen-in-1');
+        $('.screen-five .p-box').removeClass('no-opacity').addClass('screen-in-2');
+        $('.screen-five .btn-box').removeClass('no-opacity').addClass('screen-in-3');
+        $('.screen-five .card-people').removeClass('no-opacity').addClass('screen-in-6');
+    }
+}, {
+        time: 500, // 500开始，1100结束
+        cb() {
+            $('.screen-five .card-zu-1').removeClass('no-opacity').addClass('screen-in-4');
+            $('.screen-five .card-zu-2').removeClass('no-opacity').addClass('screen-in-2');
+        }
+    }, {
+        time: 200, // 700开始,1300结束，+ 延时200s
+        cb() {
+            $('.screen-five .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
         }
     }, {
         time: 400, // 1100，1100结束处理
         cb() {
-            $('.screen-three .card-zu-1').removeClass('screen-in-4').addClass('screen-move-1');
-            $('.screen-three .card-zu-4').removeClass('no-opacity').addClass('screen-move-2');
+            $('.screen-five .card-zu-1').removeClass('screen-in-4').addClass('screen-move-1');
+            $('.screen-five .card-zu-4').removeClass('no-opacity').addClass('screen-move-2');
         }
     }, {
         time: 300, // 1400开始  ,2000结束
         cb() {
-            $('.screen-three .card-fu-2').removeClass('no-opacity').addClass('screen-in-5');
+            $('.screen-five .card-fu-2').removeClass('no-opacity').addClass('screen-in-5');
         }
     }, {
         time: 100, // 1500  ，1500 处理结束
         cb() {
-            $('.screen-three .card-zu-3').removeClass('screen-in-4').addClass('screen-move-3');
-        }
-    }, {
-        time: 100, // 1600开始  2200 结束
-        cb() {
-            $('.screen-three .card-fu-1').removeClass('no-opacity').addClass('screen-in-5');
-            $('.screen-three .card-fu-3').removeClass('no-opacity').addClass('screen-in-5');
+            $('.screen-five .card-zu-3').removeClass('screen-in-4').addClass('screen-move-3');
         }
     }];
-
-// excuteQueue(fourthScreenComeStalk);
+excuteQueue(fifthScreenComeStalk);

@@ -32,7 +32,7 @@
 }
 
 // 页面加的动画 + 元素切入动画
-@each $name, $moveX,$moveY,$opacity, $duration ,$moveFuction,$opacityFunction in
+@each $name, $moveY,$moveX,$opacity, $duration ,$moveFuction,$opacityFunction in
                       // 首屏进入的参数
                       (slide-in-1, 40px,0,0,.4s,cubic-bezier(0,0,0.58,1),linear),
                       (slide-in-2, 60px,0,0,.5s,cubic-bezier(0,0,0.58,1),linear),
@@ -50,7 +50,7 @@
                       (screen-in-6,800px,670px,0,.8s,cubic-bezier(0.25,0.1,0.25,0.1),linear), // screen-in-8
 {
   .#{$name} {
-    transform: translate3d(0,$moveX, $moveY);
+    transform: translate3d($moveX,$moveY, 0);
     opacity: 0;
     animation: $name+-easeout $duration $moveFuction,
                $name+-line  $duration $opacityFunction;
@@ -58,7 +58,7 @@
   }
   @keyframes #{$name}-easeout {
       0%{
-        transform: translate3d(0,$moveX, $moveY);
+        transform: translate3d($moveX,$moveY,0);
       }
       100%{
         transform: translate3d(0,0, 0);

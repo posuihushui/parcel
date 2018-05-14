@@ -2,15 +2,17 @@ import "./setting.scss";
 import './screenAnimate.scss';
 import "./index.scss";
 
-let timeDelay = (time = 500,cb) => new Promise((resolve) => {
+let timeDelay = (time = 500) => (new Promise((resolve) => {
     setTimeout(() => {
-        cb && cb();
         resolve();
     }, time);
-});
+}));
 
 function excuteQueue([...timeCallStack]) {
-    timeCallStack.map((e) => timeDelay(e.time, e.cb)).reduce((pre, cur) => pre.then(cur), Promise.resolve());
+    timeCallStack.reduce((promise, current) => promise.then(() => {
+        current.cb && current.cb();
+        return timeDelay(current.tmie);
+    }), Promise.resolve());
 } 
 async function loadFrame(frameClass = 'animate-frame-one') {
     $(`.${frameClass} .part-screen.figure-content`).removeClass('no-opacity').addClass('slide-in-5');
@@ -70,31 +72,41 @@ let frameClassList = ['animate-frame-one', 'animate-frame-two', 'animate-frame-t
 
 
 // 因为每项逻辑相似，以高阶函数递归的形式组织代码
-var timeCallStack = [
-    {
-        time: 100,
-        cb() {
-            console.log(100)
-        }
-    },
-    {
-        time: 200,
-        cb() {
-            console.log(200)
-        }
-    },
-    {
-        time: 300,
-        cb() {
-            console.log(300)
-        }
-    },
-    {
-        time: 300,
-        cb() {
-            console.log(400)
-        }
-    }
-];
 
-excuteQueue(timeCallStack);
+// 第二屏切入
+let secondScreenComeStalk = [
+    {
+        time:0, // 进入
+        cb(){
+            $('.screen-two .h-box').removeClass('no-opacity').addClass('screen-in-1');
+            $('.screen-two .p-box').removeClass('no-opacity').addClass('screen-in-2');
+            $('.screen-two .btn-box').removeClass('no-opacity').addClass('screen-in-3');
+            $('.screen-two .card-people').removeClass('no-opacity').addClass('screen-in-6');
+        }
+    },{
+        time: 500, // 500
+        cb() {
+            $('.screen-two .card-zu-1').removeClass('no-opacity').addClass('screen-in-4');
+            $('.screen-two .card-zu-2').removeClass('no-opacity').addClass('screen-in-2');
+        }
+    },{
+        time: 100, // 600
+        cb() {
+            $('.screen-two .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
+            $('.screen-two .card-zu-4').removeClass('no-opacity').addClass('screen-in-2');
+        }
+    }, {
+        time: 600, // 1300 进入全部结束,进入浮动阶段
+        cb() {
+            $('.screen-two .card-zu-1').removeClass('screen-in-4').addClass('screen-move-1');
+            $('.screen-two .card-zu-4').removeClass('screen-in-2').addClass('screen-move-2');
+        }
+    },{
+        time: 100, // 1400 全部进入浮动阶段
+        cb() {
+            $('.screen-two .card-zu-2').removeClass('screen-in-2').addClass('screen-move-1');
+            $('.screen-two .card-zu-3').removeClass('screen-in-4').addClass('screen-move-2');
+        }
+    }];
+
+excuteQueue(secondScreenComeStalk);

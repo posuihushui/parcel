@@ -11,7 +11,7 @@ let timeDelay = (time = 500) => (new Promise((resolve) => {
 function excuteQueue([...timeCallStack]) {
     timeCallStack.reduce((promise, current) => promise.then(() => {
         current.cb && current.cb();
-        return timeDelay(current.tmie);
+        return timeDelay(current.time);
     }), Promise.resolve());
 } 
 async function loadFrame(frameClass = 'animate-frame-one') {
@@ -96,13 +96,13 @@ let secondScreenComeStalk = [
             $('.screen-two .card-zu-4').removeClass('no-opacity').addClass('screen-in-2');
         }
     }, {
-        time: 600, // 1300 进入全部结束,进入浮动阶段
+        time: 600, // 1300 
         cb() {
             $('.screen-two .card-zu-1').removeClass('screen-in-4').addClass('screen-move-1');
             $('.screen-two .card-zu-4').removeClass('screen-in-2').addClass('screen-move-2');
         }
     },{
-        time: 100, // 1400 全部进入浮动阶段
+        time: 100, // 1400 
         cb() {
             $('.screen-two .card-zu-2').removeClass('screen-in-2').addClass('screen-move-1');
             $('.screen-two .card-zu-3').removeClass('screen-in-4').addClass('screen-move-2');
@@ -110,3 +110,99 @@ let secondScreenComeStalk = [
     }];
 
 excuteQueue(secondScreenComeStalk);
+
+// 第三屏
+
+let thirdScreenComeStalk = [
+    {
+        time: 0, // 进入，不结束
+        cb() {
+            $('.screen-three .h-box').removeClass('no-opacity').addClass('screen-in-1');
+            $('.screen-three .p-box').removeClass('no-opacity').addClass('screen-in-2');
+            $('.screen-three .btn-box').removeClass('no-opacity').addClass('screen-in-3');
+            $('.screen-three .card-people').removeClass('no-opacity').addClass('screen-in-6');
+        }
+    }, {
+        time: 500, // 500开始，1100结束
+        cb() {
+            $('.screen-three .card-zu-1').removeClass('no-opacity').addClass('screen-in-4');
+            $('.screen-three .card-zu-2').removeClass('no-opacity').addClass('screen-in-2');
+        }
+    }, {
+        time: 200, // 700开始,1300结束，+ 延时200s
+        cb() {
+            $('.screen-three .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
+        }
+    }, {
+        time: 400, // 1100，1100结束处理
+        cb() {
+            $('.screen-three .card-zu-1').removeClass('screen-in-4').addClass('screen-move-1');
+            $('.screen-three .card-zu-4').removeClass('no-opacity').addClass('screen-move-2');
+        }
+    }, {
+        time: 300, // 1400开始  ,2000结束
+        cb() {
+            $('.screen-three .card-fu-2').removeClass('no-opacity').addClass('screen-in-5');
+        }
+    }, {
+        time: 100, // 1500  ，1500 处理结束
+        cb() {
+            $('.screen-three .card-zu-3').removeClass('screen-in-4').addClass('screen-move-3');
+        }
+    },{
+        time: 100, // 1600开始  2200 结束
+        cb() {
+            $('.screen-three .card-fu-1').removeClass('no-opacity').addClass('screen-in-5');
+            $('.screen-three .card-fu-3').removeClass('no-opacity').addClass('screen-in-5');
+        }
+    }];
+
+excuteQueue(thirdScreenComeStalk);
+
+
+// 第四屏
+let fourthScreenComeStalk = [
+    {
+        time: 0, // 进入，不结束
+        cb() {
+            $('.screen-three .h-box').removeClass('no-opacity').addClass('screen-in-1');
+            $('.screen-three .p-box').removeClass('no-opacity').addClass('screen-in-2');
+            $('.screen-three .btn-box').removeClass('no-opacity').addClass('screen-in-3');
+            $('.screen-three .card-people').removeClass('no-opacity').addClass('screen-in-6');
+        }
+    }, {
+        time: 500, // 500开始，1100结束
+        cb() {
+            $('.screen-three .card-zu-1').removeClass('no-opacity').addClass('screen-in-4');
+            $('.screen-three .card-zu-2').removeClass('no-opacity').addClass('screen-in-2');
+        }
+    }, {
+        time: 200, // 700开始,1300结束，+ 延时200s
+        cb() {
+            $('.screen-three .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
+        }
+    }, {
+        time: 400, // 1100，1100结束处理
+        cb() {
+            $('.screen-three .card-zu-1').removeClass('screen-in-4').addClass('screen-move-1');
+            $('.screen-three .card-zu-4').removeClass('no-opacity').addClass('screen-move-2');
+        }
+    }, {
+        time: 300, // 1400开始  ,2000结束
+        cb() {
+            $('.screen-three .card-fu-2').removeClass('no-opacity').addClass('screen-in-5');
+        }
+    }, {
+        time: 100, // 1500  ，1500 处理结束
+        cb() {
+            $('.screen-three .card-zu-3').removeClass('screen-in-4').addClass('screen-move-3');
+        }
+    }, {
+        time: 100, // 1600开始  2200 结束
+        cb() {
+            $('.screen-three .card-fu-1').removeClass('no-opacity').addClass('screen-in-5');
+            $('.screen-three .card-fu-3').removeClass('no-opacity').addClass('screen-in-5');
+        }
+    }];
+
+// excuteQueue(fourthScreenComeStalk);

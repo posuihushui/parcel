@@ -49,6 +49,7 @@
                       (screen-in-5,0,0,0,.6s,cubic-bezier(0.25,0.1,0.25,0.1),cubic-bezier(0.25,0.1,0.25,0.1)), // screen-in-6,screen-in-7
                       (screen-in-6,800px,-670px,0,.8s,cubic-bezier(0.25,0.1,0.25,0.1),linear), // screen-in-8
                       (screen-in-7,30%,0,0,.8s,cubic-bezier(0.25,0.1,0.25,0.1),linear),
+                      (screen-in-8,800px,670px,0,.8s,cubic-bezier(0.25,0.1,0.25,0.1),linear), // screen-in-8
 {
   .#{$name} {
     transform: translate3d($moveX,$moveY, 0);

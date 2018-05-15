@@ -72,7 +72,28 @@ let frameClassList = ['animate-frame-one', 'animate-frame-two', 'animate-frame-t
 
 
 // 因为每项逻辑相似，以高阶函数递归的形式组织代码
-
+// 离开效果一样，可以封装
+function runLeaveQueue(preclass, [...notBtnClassNames]) {
+    let queue = [
+        {
+            time: 0,
+            cb() {
+                [...notBtnClassNames].forEach((e) => {
+                    document.querySelector(`.${preclass} .${e}`).className = e + ' screen-out-1';
+                });
+                document.querySelector(`.${preclass} .btn-box`).className = 'btn-box screen-out-2'
+            }
+        }, {
+            time: 600,
+            cb() {
+                [...notBtnClassNames,'btn-box'].forEach((e) => {
+                    document.querySelector(`.${preclass} .${e}`).className = e + ' no-opacity';
+                });
+            }
+        }];
+    
+    excuteQueue(queue);
+}
 // 第二屏切入
 let secondScreenComeStalk = [
     {
@@ -109,7 +130,8 @@ let secondScreenComeStalk = [
         }
     }];
 
-excuteQueue(secondScreenComeStalk);
+let secondScreenNotBtnClassNames = ['card-people', 'card-zu-1', 'card-zu-2', 'card-zu-3', 'card-zu-4', 'h-box', 'p-box'];
+
 
 // 第三屏
 
@@ -120,7 +142,7 @@ let thirdScreenComeStalk = [
             $('.screen-three .h-box').removeClass('no-opacity').addClass('screen-in-1');
             $('.screen-three .p-box').removeClass('no-opacity').addClass('screen-in-2');
             $('.screen-three .btn-box').removeClass('no-opacity').addClass('screen-in-3');
-            $('.screen-three .card-people').removeClass('no-opacity').addClass('screen-in-6');
+            $('.screen-three .card-people').removeClass('no-opacity').addClass('screen-in-8');
         }
     }, {
         time: 500, // 500开始，1100结束
@@ -168,8 +190,7 @@ let thirdScreenComeStalk = [
         }
     }];
 
-excuteQueue(thirdScreenComeStalk);
-
+let thirdScreenNotBtnClassNames = ['card-people', 'card-zu-1', 'card-zu-2', 'card-zu-3', 'card-zu-4', 'card-zu-1', 'card-fu-1', 'card-fu-2', 'card-fu-3', 'h-box', 'p-box'];
 
 // 第四屏
 let fourthScreenComeStalk = [
@@ -193,8 +214,9 @@ let fourthScreenComeStalk = [
             $('.screen-four .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
         }
     }];
-excuteQueue(fourthScreenComeStalk);
+let fourthScreenNotBtnClassNames = ['card-zu-1', 'card-zu-2', 'card-zu-3', 'h-box', 'p-box'];
 
+// 第五屏
 let fifthScreenComeStalk = [
     {
         time: 0, // 进入，不结束
@@ -254,7 +276,7 @@ let fifthScreenComeStalk = [
             $('.screen-five .card-num-3').removeClass('screen-in-5').addClass('screen-move-3');
         }
     }];
-excuteQueue(fifthScreenComeStalk);
+let fifthScreenNotBtnClassNames = ['card-people', 'card-zu-1', 'card-zu-2', 'card-zu-3', 'card-num-1', 'card-num-2', 'card-num-3', 'h-box', 'p-box'];
 $(document).ready(function () {
     $('#fullpage').fullpage({
         //Scrolling
@@ -281,34 +303,43 @@ $(document).ready(function () {
 
         //events
         onLeave: function (index, nextIndex, direction) {
+
             if (index == 1 && direction == 'down') {
-                // 离开第一屏
-                console.log("离开第一屏!，进入第二屏");
+                excuteQueue(secondScreenComeStalk);
             }
-            
 
             if (index == 2 && direction == 'down') {
-                console.log("离开第二屏!，进入第三屏!");
+                runLeaveQueue('screen-two', secondScreenNotBtnClassNames);
+                excuteQueue(thirdScreenComeStalk)
             }else if (index == 2 && direction == 'up') {
-                console.log("离开第二屏!，进入第一屏!");
+                runLeaveQueue('screen-two', secondScreenNotBtnClassNames);
             }
 
             if (index == 3 && direction == 'down') {
-                console.log("离开第三屏!，进入第四屏!");
+                runLeaveQueue('screen-three', thirdScreenNotBtnClassNames);
+                excuteQueue(fourthScreenComeStalk);
             }else if (index == 3 && direction == 'up') {
-                console.log("离开第三屏!，进入第二屏!");
+                excuteQueue(secondScreenComeStalk);
+                runLeaveQueue('screen-three', thirdScreenNotBtnClassNames);
             }
 
             if (index == 4 && direction == 'down') {
-                console.log("离开第四屏!，进入第五屏!");
+                runLeaveQueue('screen-four', fourthScreenNotBtnClassNames);
+                excuteQueue(fifthScreenComeStalk);
             }else if (index == 4 && direction == 'up') {
-                console.log("离开第四屏!，进入第三屏!");
+                runLeaveQueue('screen-four', fourthScreenNotBtnClassNames);
+                excuteQueue(thirdScreenComeStalk);
             }
 
             if (index == 5 && direction == 'down') {
-                console.log("离开第五屏!，进入第六屏!");
+                runLeaveQueue('screen-five', fifthScreenNotBtnClassNames);
             } else if (index == 5 && direction == 'up') {
-                console.log("离开第五屏!，进入第四屏!");
+                runLeaveQueue('screen-five', fifthScreenNotBtnClassNames);
+                excuteQueue(fourthScreenComeStalk);
+            }
+
+            if (index == 6 && direction == 'up') {
+                excuteQueue(fifthScreenComeStalk);
             }
 
 

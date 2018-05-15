@@ -278,8 +278,15 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     background-size: cover;
     @content;
 }
+@mixin screen-bg($url){
+    background-image: url($url);
+    background-size:  cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
 // special;
 .screen-two{
+    @include screen-bg('./home/2_bg@2x.png');
     .screen-figure{
         z-index: 1;
         .card-people{
@@ -310,7 +317,6 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
         
     }
     .screen-text{
-        background-color: #ebf5ff;
         .text-box{
             @include postion($top:300,$right:auto,$bottom:auto,$left:80);
             z-index: 1;
@@ -335,7 +341,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 
 .screen-three{
-    background-image: linear-gradient(180deg,#b4dfff,#81abd8);
+    @include screen-bg('./home/3_bg@2x.png');
     .screen-figure{
         z-index: 1;
         .card-people{
@@ -410,6 +416,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 
 .screen-four{
+    @include screen-bg('./home/4_bg@2x.png');
     .screen-figure{
         z-index: 1;
         .card-zu-1{
@@ -430,7 +437,6 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
         
     }
     .screen-text{
-        background-color: #ebf5ff;
         .text-box{
             @include postion($top:300,$right:auto,$bottom:auto,$left:80);
             z-index: 1;
@@ -452,7 +458,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 
 .screen-five{
-    background-image: linear-gradient(180deg,#4a6dc9,#384496);
+    @include screen-bg('./home/5_bg@2x.png');
      .screen-figure{
         z-index: 1;
         .card-people{

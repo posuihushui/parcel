@@ -13,7 +13,7 @@ function excuteQueue([...timeCallStack]) {
         current.cb && current.cb();
         return timeDelay(current.time);
     }), Promise.resolve());
-} 
+}
 async function loadFrame(frameClass = 'animate-frame-one') {
     $(`.${frameClass} .part-screen.figure-content`).removeClass('no-opacity').addClass('slide-in-5');
     await timeDelay(500);
@@ -76,20 +76,20 @@ let frameClassList = ['animate-frame-one', 'animate-frame-two', 'animate-frame-t
 // 第二屏切入
 let secondScreenComeStalk = [
     {
-        time:0, // 进入
-        cb(){
+        time: 0, // 进入
+        cb() {
             $('.screen-two .h-box').removeClass('no-opacity').addClass('screen-in-1');
             $('.screen-two .p-box').removeClass('no-opacity').addClass('screen-in-2');
             $('.screen-two .btn-box').removeClass('no-opacity').addClass('screen-in-3');
             $('.screen-two .card-people').removeClass('no-opacity').addClass('screen-in-6');
         }
-    },{
+    }, {
         time: 500, // 500
         cb() {
             $('.screen-two .card-zu-1').removeClass('no-opacity').addClass('screen-in-4');
             $('.screen-two .card-zu-2').removeClass('no-opacity').addClass('screen-in-2');
         }
-    },{
+    }, {
         time: 100, // 600
         cb() {
             $('.screen-two .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
@@ -101,7 +101,7 @@ let secondScreenComeStalk = [
             $('.screen-two .card-zu-1').removeClass('screen-in-4').addClass('screen-move-1');
             $('.screen-two .card-zu-4').removeClass('screen-in-2').addClass('screen-move-2');
         }
-    },{
+    }, {
         time: 100, // 1400 
         cb() {
             $('.screen-two .card-zu-2').removeClass('screen-in-2').addClass('screen-move-1');

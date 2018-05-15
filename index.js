@@ -282,15 +282,10 @@ $(document).ready(function () {
         //Scrolling
         css3: true,
         scrollingSpeed: 700,
-        autoScrolling: true,
-        fitToSection: true,
+        // fitToSection: true,
         fitToSectionDelay: 1000,
         easing: 'easeInOutCubic',
         easingcss3: 'ease',
-        scrollOverflow: true,
-        scrollOverflowOptions: {
-            scrollbars: false
-        },
         touchSensitivity: 15,
 
         //Accessibility

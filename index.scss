@@ -467,35 +467,36 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             background-image: url('./home/5_peo.png');
         }
         .card-zu-1{
-            @include size(62,97);
-            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
-            z-index: 1;
+            @include size(341,304);
+            @include postion($top:auto,$right:auto,$bottom:303,$left:255);
+            background-image: url('./home/5_card_zu_1.png');
         }
         .card-zu-2{
-            @include size(176,179);
-            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+            @include size(512,299);
+            @include postion($top:auto,$right:auto,$bottom:234,$left:183);
+            background-image: url('./home/5_card_zu_2.png');
         }
         .card-zu-3{
-            @include size(424,337);
-            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+            @include size(306,221);
+            // @include postion($top:144,$right:754,$bottom:435,$left:380);
+            @include postion($top:auto,$right:auto,$bottom:435,$left:380);
+            background-image: url('./home/5_card_zu_3.png');
         }
-        .card-zu-4{
-            @include size(482,398);
-            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+        .card-num-1{
+            @include size(458,356);
+            @include postion($top:auto,$right:auto,$bottom:306,$left:326);
+            background-image: url('./home/5_num_1.png');
         }
-        .card-fu-1{
-            @include size(125,94);
-            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+        .card-num-2{
+            @include size(175,202);
+            @include postion($top:auto,$right:auto,$bottom:376,$left:175);
+            background-image: url('./home/5_num_2.png');
         }
-        .card-fu-2{
-            @include size(115,125);
-            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
+        .card-num-3{
+            @include size(189,376);
+            @include postion($top:auto,$right:auto,$bottom:314,$left:341);
+            background-image: url('./home/5_num_3.png');
         }
-        .card-fu-3{
-            @include size(84,111);
-            @include postion($top:auto,$right:auto,$bottom:62,$left:250);
-        }
-        
     }
     .screen-text{
         .text-box{

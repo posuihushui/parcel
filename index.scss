@@ -438,7 +438,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     }
     .screen-text{
         .text-box{
-            @include postion($top:300,$right:auto,$bottom:auto,$left:80);
+            @include postion($top:300,$right:80,$bottom:auto,$left:auto);
             z-index: 1;
             top: 19%;
             color:#414676;

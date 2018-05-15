@@ -216,20 +216,42 @@ let fifthScreenComeStalk = [
             $('.screen-five .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
         }
     }, {
-        time: 400, // 1100，1100结束处理
+        time: 300, // 1000开始 
+        cb() {
+            $('.screen-five .card-num-2').removeClass('no-opacity').addClass('screen-in-5');
+        }
+    } ,{
+        time: 1100, // 1100
         cb() {
             $('.screen-five .card-zu-1').removeClass('screen-in-4').addClass('screen-move-1');
-            $('.screen-five .card-zu-4').removeClass('no-opacity').addClass('screen-move-2');
+            $('.screen-five .card-zu-2').removeClass('screen-in-2').addClass('screen-move-2');
         }
-    }, {
-        time: 300, // 1400开始  ,2000结束
-        cb() {
-            $('.screen-five .card-fu-2').removeClass('no-opacity').addClass('screen-in-5');
-        }
-    }, {
-        time: 100, // 1500  ，1500 处理结束
-        cb() {
+    },{
+        time:100, // 1200
+        cb(){
             $('.screen-five .card-zu-3').removeClass('screen-in-4').addClass('screen-move-3');
+            $('.screen-five .card-num-1').removeClass('no-opacity').addClass('screen-in-5');
+            $('.screen-five .card-num-3').removeClass('no-opacity').addClass('screen-in-5');
+        }
+    }, {
+        time: 100, // 1300
+        cb() {
+            $('.screen-five .card-num-2').removeClass('no-opacity').addClass('screen-in-5');
+        }
+    },{
+        time: 500, // 1700
+        cb() {
+            $('.screen-five .card-num-1').removeClass('screen-in-5').addClass('screen-move-1');
+        }
+    }, {
+        time: 100, // 1800
+        cb() {
+            $('.screen-five .card-num-2').removeClass('screen-in-5').addClass('screen-move-2');
+        }
+    }, {
+        time: 100, // 1900
+        cb() {
+            $('.screen-five .card-num-3').removeClass('screen-in-5').addClass('screen-move-3');
         }
     }];
 excuteQueue(fifthScreenComeStalk);

@@ -18,7 +18,7 @@
     }
 })(typeof window !== 'undefined' ? window : this, function($, window, document, Math, undefined) {
     'use strict';
-
+    console.log('xxxxxxx')
     // keeping central set of classnames and selectors
     var WRAPPER =               'fullpage-wrapper';
     var WRAPPER_SEL =           '.' + WRAPPER;

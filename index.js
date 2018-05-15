@@ -255,3 +255,63 @@ let fifthScreenComeStalk = [
         }
     }];
 excuteQueue(fifthScreenComeStalk);
+$(document).ready(function () {
+    $('#fullpage').fullpage({
+        //Scrolling
+        css3: true,
+        scrollingSpeed: 700,
+        autoScrolling: true,
+        fitToSection: true,
+        fitToSectionDelay: 1000,
+        easing: 'easeInOutCubic',
+        easingcss3: 'ease',
+        scrollOverflow: true,
+        scrollOverflowOptions: {
+            scrollbars: false
+        },
+        touchSensitivity: 15,
+
+        //Accessibility
+        keyboardScrolling: true,
+        animateAnchor: true,
+        // recordHistory: true,
+
+        //Custom selectors
+        sectionSelector: '.screen',
+
+        //events
+        onLeave: function (index, nextIndex, direction) {
+            if (index == 1 && direction == 'down') {
+                // 离开第一屏
+                console.log("离开第一屏!，进入第二屏");
+            }
+            
+
+            if (index == 2 && direction == 'down') {
+                console.log("离开第二屏!，进入第三屏!");
+            }else if (index == 2 && direction == 'up') {
+                console.log("离开第二屏!，进入第一屏!");
+            }
+
+            if (index == 3 && direction == 'down') {
+                console.log("离开第三屏!，进入第四屏!");
+            }else if (index == 3 && direction == 'up') {
+                console.log("离开第三屏!，进入第二屏!");
+            }
+
+            if (index == 4 && direction == 'down') {
+                console.log("离开第四屏!，进入第五屏!");
+            }else if (index == 4 && direction == 'up') {
+                console.log("离开第四屏!，进入第三屏!");
+            }
+
+            if (index == 5 && direction == 'down') {
+                console.log("离开第五屏!，进入第六屏!");
+            } else if (index == 5 && direction == 'up') {
+                console.log("离开第五屏!，进入第四屏!");
+            }
+
+
+        }
+    });
+})

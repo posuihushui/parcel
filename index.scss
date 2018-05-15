@@ -28,7 +28,9 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     width: toPercent($width,1440);
     height: toPercent($height,800);
 }
-
+.screen-box{
+    height: 100%;
+}
 .no-opacity{opacity: 0;}
 .screen-one{
     height: 100%;

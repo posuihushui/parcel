@@ -21,8 +21,9 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     right: toPercent($right,1440);
     bottom: toPercent($bottom,800);
     left: toPercent($left,1440);
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
+    background-position: center center;
 }
 @mixin size($width:auto,$height:auto){
     width: toPercent($width,1440);
@@ -86,8 +87,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             left: 0;
             top: 0;
             .part-screen-bg{
-                width: 830px;
-                height: 515px;
+                @include size(830,515);
                 @include postion($top:auto,$right:0,$bottom:36,$left:auto);
                 background-image: url('./home/mokeup.png');
             }
@@ -101,8 +101,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             top: 0;
             &.animate-frame-one{
                 .figure-content{
-                    width: 830px;
-                    height: 515px;
+                    @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
                     background-image: url('./home/screen1@2x.png');
                 }
@@ -127,8 +126,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 
             &.animate-frame-two{
                 .figure-content{
-                    width: 830px;
-                    height: 515px;
+                    @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
                     background-image: url('./home/screen2@2x.png');
                 }
@@ -152,8 +150,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 
             &.animate-frame-three{
                 .figure-content{
-                    width: 830px;
-                    height: 515px;
+                    @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
                     background-image: url('./home/screen3@2x.png');
                 }
@@ -177,8 +174,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 
             &.animate-frame-four{
                 .figure-content{
-                    width: 830px;
-                    height: 515px;
+                    @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
                     background-image: url('./home/screen4@2x.png');
                 }
@@ -277,7 +273,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     width: $width;
     height: $width;
     display: inline-block;
-    background-size: cover;
+    background-size: 100% 100%;
     @content;
 }
 @mixin screen-bg($url){

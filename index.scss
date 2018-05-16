@@ -23,11 +23,11 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     left: toPercent($left,1440);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position: center center;
+    // background-position: center center;
 }
 @mixin size($width:auto,$height:auto){
-    width: toPercent($width,1440);
-    height: toPercent($height,800);
+    width: $width + px;
+    height: $height + px;
 }
 .screen-box{
     height: 100%;
@@ -397,6 +397,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 .jump-detail{
                     display: flex;
                     height: 30px;
+                    font-size: 16px;
                     line-height: 30px;
                     margin-left: 30px;
                     color:#fff;

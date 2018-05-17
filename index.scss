@@ -458,7 +458,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
         .text-box{
             @include postion($top:320,$right:80,$bottom:auto,$left:auto);
             @include media-1280(){
-                @include postion(auto, auto, 180, 80);
+                @include postion(auto, auto, 90, 80);
             }
             z-index: 1;
             color:#ffffff;
@@ -542,7 +542,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     }
     .screen-text{
         .text-box{
-            @include postion($top:300,$right:auto,$bottom:auto,$left:160);
+            @include postion($top:auto,$right:auto,$bottom:170,$left:160);
             z-index: 1;
             color:#414676;
             @media (max-width:1440px){
@@ -607,7 +607,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
         .text-box{
             @include postion($top:300,$right:auto,$bottom:auto,$left:80);
             @include media-1280(){
-                @include postion(300, 160, auto, auto);
+                @include postion(auto, 160, 205, auto);
             }
             z-index: 1;
             color:#FFF;

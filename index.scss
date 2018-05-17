@@ -149,6 +149,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     @include postion($top:auto,$right:20,$bottom:146,$left:auto);
                     background-image: url('./home/part_4.png');
                     box-shadow: 0 10px 20px 0 rgba(57, 145, 230, 0.5);
+                    border-radius: 12px;
                 }
                 .part2{
                     @include size(116,77);
@@ -178,9 +179,10 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     @include postion($top:auto,$right:20,$bottom:284,$left:auto);
                     background-image: url('./home/part_8.png');
                     box-shadow: 0 10px 20px 0 rgba(81, 156, 227, 0.3);
+                    border-radius: 6px;
                 }
                 .part3{
-                    @include size(184,122,8);
+                    @include size(184,122,.8);
                     @include postion($top:140,$right:auto,$bottom:auto,$left:330);
                     background-image: url('./home/part_9.png');
                 }
@@ -202,6 +204,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     @include postion($top:190,$right:150,$bottom:auto,$left:auto);
                     background-image: url('./home/part_11.png');
                     box-shadow: 0 10px 20px 0 rgba(173, 220, 238, 0.5);
+                    border-radius: 6px;
                 }
                 .part3{
                     @include size(193,123);
@@ -231,6 +234,9 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             margin: auto;
             background-image: linear-gradient(to bottom, #31a5ff, #1197ff);
             box-shadow: 0 15px 30px 0 rgba(33, 149, 240, 0.6);
+            &:hover{
+                background-image: linear-gradient(90deg, #5ab7ff, #3ea9ff);
+            }
         }
     }
 }
@@ -345,6 +351,12 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     background-position: center center;
     background-repeat: no-repeat;
 }
+.flex-middle{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .text-box{
    @include media-1280(){
        max-width: calc(100% - 270px);
@@ -384,10 +396,12 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     }
     .screen-text{
         .text-box{
-            @include postion($top:auto,$right:auto,$bottom:130,$left:160);
+            @include postion($top:0,$right:auto,$bottom:auto,$left:160);
             @include media-1280(){
-                @include postion(auto, 60, 130, auto);
+                @include postion(0, 60, auto, auto);
             }
+            @extend .flex-middle;
+            
             z-index: 1;
             color:#414676;
             .text-p{
@@ -456,10 +470,11 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     }
     .screen-text{
         .text-box{
-            @include postion($top:320,$right:80,$bottom:auto,$left:auto);
+            @include postion($top:0,$right:80,$bottom:auto,$left:auto);
             @include media-1280(){
-                @include postion(auto, auto, 90, 80);
+                @include postion(auto, auto, 0, 80);
             }
+            @extend .flex-middle;
             z-index: 1;
             color:#ffffff;
             text-align: right;
@@ -542,12 +557,13 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     }
     .screen-text{
         .text-box{
-            @include postion($top:auto,$right:auto,$bottom:170,$left:160);
+            @include postion($top:auto,$right:auto,$bottom:0,$left:160);
             z-index: 1;
             color:#414676;
             @media (max-width:1440px){
                 width:calc(100% - 360px);
             }
+            @extend .flex-middle;
             .text-p{
                 color:#7585b1;
             }
@@ -605,10 +621,11 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     }
     .screen-text{
         .text-box{
-            @include postion($top:300,$right:auto,$bottom:auto,$left:80);
+            @include postion($top:0,$right:auto,$bottom:auto,$left:80);
             @include media-1280(){
-                @include postion(auto, 160, 205, auto);
+                @include postion(auto, 160, 0, auto);
             }
+            @extend .flex-middle;
             z-index: 1;
             color:#FFF;
             text-align: right;
@@ -665,6 +682,11 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             text-align: center;
             font-family: Gotham Book;
             margin-bottom: 80px;
+            cursor: pointer;
+            &:hover{
+                background-color: #4b59c9;
+                box-shadow: 0 12px 24px 0 rgba(52, 67, 189, 0.3);
+            }
         }
     }
 }

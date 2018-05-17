@@ -4,16 +4,21 @@ html,body{height: 100%;min-width: 320px;}
 // $width:1440;
 $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 @mixin width($width:1440){
-    width: toPercent($width,1440);
+    width: $width + px;
 }
 @mixin height($height:800){
-    height: toPercent($height,800);
+    height: $height + px;
 }
 @function toPercent($value,$denominator) {
     @if($value == auto){
         @return auto;
     }
-   @return  $value*100/$denominator + %;
+    @if($denominator == 800){
+        @return $value*100/$denominator + vh;
+    }
+    @if($denominator == 1440){
+        @return $value*100/$denominator + vw;
+    }
 }
 @mixin postion($top:auto,$right:auto,$bottom:auto,$left:auto){
     position: absolute;
@@ -25,9 +30,18 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     background-repeat: no-repeat;
     // background-position: center center;
 }
-@mixin size($width:auto,$height:auto){
+@mixin size($width:auto,$height:auto,$scale:1){
     width: $width + px;
     height: $height + px;
+    @include media-1280(){
+       width: $scale*$width + px;
+       height: $scale*$height + px;
+    }
+}
+@mixin media-1280(){
+    @media (max-width:1280px) {
+        @content;
+    }
 }
 .screen-box{
     height: 100%;
@@ -49,12 +63,12 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             width: 100%;
             height: 100%;
             .feature-text{
-                @include width($width:560);
                 position: absolute;
-                top: 50%;
-                left: 10%;
+                top: 50vh;
+                left: 7%;
                 transform: translateY(-50%);
                 z-index: 2;
+                max-width: calc(100% - 840px);
                 .title{
                     font-family: Gotham Light;
                     font-size: 80px;
@@ -106,19 +120,19 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     background-image: url('./home/screen1@2x.png');
                 }
                 .part1{
-                    @include size(114,175);
+                    @include size(114,175,.6);
                     @include postion($top:auto,$right:auto,$bottom:85,$left:350);
                     background-image: url('./home/part_1.png');
                 }
                 .part2{
                     @include size(163,40);
                     @include postion($top:auto,$right:10,$bottom:240,$left:auto);
-                    // box-shadow: 0 5px 10px 0 rgba(77, 240, 32, 0.4);
+                    box-shadow: 0 5px 10px 0 rgba(77, 240, 32, 0.4);
                     background-image: url('./home/part_2.png');
                     border-radius: 20px;
                 }
                 .part3{
-                    @include size(294,212);
+                    @include size(294,212,.8);
                     @include postion($top:85,$right:auto,$bottom:auto,$left:380);
                     background-image: url('./home/part_3.png');
                 }
@@ -134,7 +148,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     @include size(140,200);
                     @include postion($top:auto,$right:20,$bottom:146,$left:auto);
                     background-image: url('./home/part_4.png');
-                    // box-shadow: 0 10px 20px 0 rgba(57, 145, 230, 0.5);
+                    box-shadow: 0 10px 20px 0 rgba(57, 145, 230, 0.5);
                 }
                 .part2{
                     @include size(116,77);
@@ -142,7 +156,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     background-image: url('./home/part_5.png');
                 }
                 .part3{
-                    @include size(230,150);
+                    @include size(230,150,.8);
                     @include postion($top:85,$right:auto,$bottom:auto,$left:380);
                     background-image: url('./home/part_6.png');
                 }
@@ -155,7 +169,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     background-image: url('./home/screen3@2x.png');
                 }
                 .part1{
-                    @include size(230,150);
+                    @include size(230,150,.6);
                     @include postion($top:auto,$right:auto,$bottom:110,$left:430);
                     background-image: url('./home/part_7.png');
                 }
@@ -163,10 +177,10 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     @include size(200,96);
                     @include postion($top:auto,$right:20,$bottom:284,$left:auto);
                     background-image: url('./home/part_8.png');
-                    // box-shadow: 0 10px 20px 0 rgba(81, 156, 227, 0.3);
+                    box-shadow: 0 10px 20px 0 rgba(81, 156, 227, 0.3);
                 }
                 .part3{
-                    @include size(184,122);
+                    @include size(184,122,8);
                     @include postion($top:140,$right:auto,$bottom:auto,$left:330);
                     background-image: url('./home/part_9.png');
                 }
@@ -179,7 +193,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     background-image: url('./home/screen4@2x.png');
                 }
                 .part1{
-                    @include size(160,88);
+                    @include size(160,88,.8);
                     @include postion($top:auto,$right:auto,$bottom:212,$left:270);
                     background-image: url('./home/part_10.png');
                 }
@@ -187,7 +201,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     @include size(160,160);
                     @include postion($top:190,$right:150,$bottom:auto,$left:auto);
                     background-image: url('./home/part_11.png');
-                    // box-shadow: 0 10px 20px 0 rgba(173, 220, 238, 0.5);
+                    box-shadow: 0 10px 20px 0 rgba(173, 220, 238, 0.5);
                 }
                 .part3{
                     @include size(193,123);
@@ -216,7 +230,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             cursor: pointer;
             margin: auto;
             background-image: linear-gradient(to bottom, #31a5ff, #1197ff);
-            // box-shadow: 0 15px 30px 0 rgba(33, 149, 240, 0.6);
+            box-shadow: 0 15px 30px 0 rgba(33, 149, 240, 0.6);
         }
     }
 }
@@ -282,6 +296,11 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     background-position: center center;
     background-repeat: no-repeat;
 }
+.text-box{
+   @include media-1280(){
+       max-width: calc(100% - 270px);
+   }
+}
 // special;
 .screen-two{
     @include screen-bg('./home/2_bg@2x.png');
@@ -316,9 +335,11 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     }
     .screen-text{
         .text-box{
-            @include postion($top:300,$right:auto,$bottom:auto,$left:80);
+            @include postion($top:auto,$right:auto,$bottom:130,$left:160);
+            @include media-1280(){
+                @include postion(auto, 60, 130, auto);
+            }
             z-index: 1;
-            top: 19%;
             color:#414676;
             .text-p{
                 color:#7585b1;
@@ -388,23 +409,48 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     .screen-text{
         .text-box{
             @include postion($top:320,$right:80,$bottom:auto,$left:auto);
+            @include media-1280(){
+                @include postion(320, auto, auto, 80);
+            }
             z-index: 1;
-            top: 20%;
             color:#ffffff;
             text-align: right;
+            .media-1024{
+                display: none;
+                @include media-1280(){
+                    display: block;
+                }
+            }
+            .media-1280{
+                @include media-1280(){
+                    display: none;
+                }
+            }
             .btn-box{
                 display: flex;
+                flex-wrap: wrap;
+                @include media-1280(){
+                    justify-content:flex-end;
+                }
                 .jump-detail{
-                    display: flex;
+                    vertical-align: middle;
                     height: 30px;
                     font-size: 16px;
                     line-height: 30px;
                     margin-left: 30px;
                     color:#fff;
+                    @include media-1280(){
+                        margin-bottom: 20px;
+                    }
                     .btn-bg{
+                        vertical-align: middle;
                         @include btn-bg(30px){
                             background-image: url('./home/5_btn.png');
                             margin-right: 10px;
+                        }
+                        @include media-1280(){
+                            float: right;
+                            margin-left: 10px;
                         }
                     }
                 }
@@ -439,7 +485,6 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
         .text-box{
             @include postion($top:300,$right:80,$bottom:auto,$left:auto);
             z-index: 1;
-            top: 19%;
             color:#414676;
             .text-p{
                 color:#7585b1;

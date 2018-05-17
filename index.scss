@@ -50,7 +50,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 .screen-one{
     height: 100%;
     position: relative;
-    background: url('./home/1_bg@2x.jpg') no-repeat;
+    background: url('//static.chimeroi.com/home/home/1_bg@2x.jpg') no-repeat;
     background-size: cover;
     overflow: hidden;
     .frame{
@@ -103,7 +103,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             .part-screen-bg{
                 @include size(830,515);
                 @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                background-image: url('./home/mokeup.png');
+                background-image: url('//static.chimeroi.com/home/home/mokeup.png');
             }
         }
         
@@ -117,24 +117,24 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 .figure-content{
                     @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                    background-image: url('./home/screen1@2x.png');
+                    background-image: url('//static.chimeroi.com/home/home/screen1@2x.png');
                 }
                 .part1{
                     @include size(114,175,.6);
                     @include postion($top:auto,$right:auto,$bottom:85,$left:350);
-                    background-image: url('./home/part_1.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_1.png');
                 }
                 .part2{
                     @include size(163,40);
                     @include postion($top:auto,$right:10,$bottom:240,$left:auto);
                     box-shadow: 0 5px 10px 0 rgba(77, 240, 32, 0.4);
-                    background-image: url('./home/part_2.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_2.png');
                     border-radius: 20px;
                 }
                 .part3{
                     @include size(294,212,.8);
                     @include postion($top:85,$right:auto,$bottom:auto,$left:380);
-                    background-image: url('./home/part_3.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_3.png');
                 }
             }
 
@@ -142,24 +142,24 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 .figure-content{
                     @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                    background-image: url('./home/screen2@2x.png');
+                    background-image: url('//static.chimeroi.com/home/home/screen2@2x.png');
                 }
                 .part1{
                     @include size(140,200);
                     @include postion($top:auto,$right:20,$bottom:146,$left:auto);
-                    background-image: url('./home/part_4.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_4.png');
                     box-shadow: 0 10px 20px 0 rgba(57, 145, 230, 0.5);
                     border-radius: 12px;
                 }
                 .part2{
                     @include size(116,77);
                     @include postion($top:202,$right:777,$bottom:auto,$left:auto);
-                    background-image: url('./home/part_5.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_5.png');
                 }
                 .part3{
                     @include size(230,150,.8);
                     @include postion($top:85,$right:auto,$bottom:auto,$left:380);
-                    background-image: url('./home/part_6.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_6.png');
                 }
             }
 
@@ -167,24 +167,24 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 .figure-content{
                     @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                    background-image: url('./home/screen3@2x.png');
+                    background-image: url('//static.chimeroi.com/home/home/screen3@2x.png');
                 }
                 .part1{
                     @include size(230,150,.6);
                     @include postion($top:auto,$right:auto,$bottom:110,$left:430);
-                    background-image: url('./home/part_7.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_7.png');
                 }
                 .part2{
                     @include size(200,96);
                     @include postion($top:auto,$right:20,$bottom:284,$left:auto);
-                    background-image: url('./home/part_8.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_8.png');
                     box-shadow: 0 10px 20px 0 rgba(81, 156, 227, 0.3);
                     border-radius: 6px;
                 }
                 .part3{
                     @include size(184,122,.8);
                     @include postion($top:140,$right:auto,$bottom:auto,$left:330);
-                    background-image: url('./home/part_9.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_9.png');
                 }
             }
 
@@ -192,24 +192,24 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 .figure-content{
                     @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                    background-image: url('./home/screen4@2x.png');
+                    background-image: url('//static.chimeroi.com/home/home/screen4@2x.png');
                 }
                 .part1{
                     @include size(160,88,.8);
                     @include postion($top:auto,$right:auto,$bottom:212,$left:270);
-                    background-image: url('./home/part_10.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_10.png');
                 }
                 .part2{
                     @include size(160,160);
                     @include postion($top:190,$right:150,$bottom:auto,$left:auto);
-                    background-image: url('./home/part_11.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_11.png');
                     box-shadow: 0 10px 20px 0 rgba(173, 220, 238, 0.5);
                     border-radius: 6px;
                 }
                 .part3{
                     @include size(193,123);
                     @include postion($top:100,$right:auto,$bottom:auto,$left:600);
-                    background-image: url('./home/part_12.png');
+                    background-image: url('//static.chimeroi.com/home/home/part_12.png');
                 }
             }
 
@@ -316,16 +316,16 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             background-size: 100% 100%;
         }
         .btn-arrow_1{
-            background-image: url("./home/jiantou_1@2x.png");
+            background-image: url("//static.chimeroi.com/home/home/jiantou_1@2x.png");
             @if ($startColor == white){
-                background-image: url("./home/jiantou_2@2x.png");
+                background-image: url("//static.chimeroi.com/home/home/jiantou_2@2x.png");
             }
             transition: transform 480ms ease-out 160ms;
         }
         .btn-arrow_2{
-            background-image: url("./home/jiantou_2@2x.png");
+            background-image: url("//static.chimeroi.com/home/home/jiantou_2@2x.png");
             @if ($startColor == white){
-                background-image: url("./home/jiantou_1@2x.png");
+                background-image: url("//static.chimeroi.com/home/home/jiantou_1@2x.png");
             }
             transition: transform 840ms ease-out 160ms;
             transform: translateX(-$width);
@@ -364,33 +364,33 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 // special;
 .screen-two{
-    @include screen-bg('./home/2_bg@2x.jpg');
+    @include screen-bg('//static.chimeroi.com/home/home/2_bg@2x.jpg');
     .screen-figure{
         z-index: 1;
         .card-people{
             @include size(307,260);
             @include postion($top:auto,$right:auto,$bottom:62,$left:150);
-            background-image: url('./home/2_people.png');
+            background-image: url('//static.chimeroi.com/home/home/2_people.png');
         }
         .card-zu-1{
             @include size(605,294);
             @include postion($top:auto,$right:auto,$bottom:146,$left:150);
-            background-image: url('./home/2_card_zu_1.png');
+            background-image: url('//static.chimeroi.com/home/home/2_card_zu_1.png');
         }
         .card-zu-2{
             @include size(428,244);
             @include postion($top:auto,$right:auto,$bottom:248,$left:165);
-            background-image: url('./home/2_card_zu_2.png');
+            background-image: url('//static.chimeroi.com/home/home/2_card_zu_2.png');
         }
         .card-zu-3{
             @include size(327,291);
             @include postion($top:auto,$right:auto,$bottom:277,$left:325);
-            background-image: url('./home/2_card_zu_3.png');
+            background-image: url('//static.chimeroi.com/home/home/2_card_zu_3.png');
         }
         .card-zu-4{
             @include size(375,239);
             @include postion($top:auto,$right:auto,$bottom:319,$left:290);
-            background-image: url('./home/2_card_zu_4.png');
+            background-image: url('//static.chimeroi.com/home/home/2_card_zu_4.png');
         }
         
     }
@@ -422,49 +422,49 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 
 .screen-three{
-    @include screen-bg('./home/3_bg@2x.jpg');
+    @include screen-bg('//static.chimeroi.com/home/home/3_bg@2x.jpg');
     .screen-figure{
         z-index: 1;
         .card-people{
             @include size(382,231);
             @include postion($top:auto,$right:160,$bottom:51,$left:auto);
-            background-image: url('./home/3_peo.png');
+            background-image: url('//static.chimeroi.com/home/home/3_peo.png');
         }
         .card-zu-1{
             @include size(62,97);
             @include postion($top:auto,$right:366,$bottom:270,$left:auto);
-            background-image: url('./home/3_card_zu_1.png');
+            background-image: url('//static.chimeroi.com/home/home/3_card_zu_1.png');
             z-index: 1;
         }
         .card-zu-2{
             @include size(176,179);
             @include postion($top:auto,$right:315,$bottom:241,$left:auto);
-            background-image: url('./home/3_card_zu_2.png');
+            background-image: url('//static.chimeroi.com/home/home/3_card_zu_2.png');
         }
         .card-zu-3{
             @include size(424,337);
             @include postion($top:auto,$right:266,$bottom:268,$left:auto);
-            background-image: url('./home/3_card_zu_3.png');
+            background-image: url('//static.chimeroi.com/home/home/3_card_zu_3.png');
         }
         .card-zu-4{
             @include size(482,398);
             @include postion($top:auto,$right:238,$bottom:234,$left:auto);
-            background-image: url('./home/3_card_zu_4.png');
+            background-image: url('//static.chimeroi.com/home/home/3_card_zu_4.png');
         }
         .card-fu-1{
             @include size(125,94);
             @include postion($top:auto,$right:529,$bottom:208,$left:auto);
-            background-image: url('./home/3_fu_card1.png');
+            background-image: url('//static.chimeroi.com/home/home/3_fu_card1.png');
         }
         .card-fu-2{
             @include size(115,125);
             @include postion($top:auto,$right:424,$bottom:292,$left:auto);
-            background-image: url('./home/3_fu_card2.png');
+            background-image: url('//static.chimeroi.com/home/home/3_fu_card2.png');
         }
         .card-fu-3{
             @include size(84,111);
             @include postion($top:auto,$right:236,$bottom:373,$left:auto);
-            background-image: url('./home/3_fu_card3.png');
+            background-image: url('//static.chimeroi.com/home/home/3_fu_card3.png');
         }
         
     }
@@ -523,7 +523,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 
 .screen-four{
-    @include screen-bg('./home/4_bg@2x.jpg');
+    @include screen-bg('//static.chimeroi.com/home/home/4_bg@2x.jpg');
     .screen-figure{
         z-index: 1;
         .card-zu-1{
@@ -533,7 +533,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             bottom: 0;
             background-size: 100% 100%;
             background-repeat: no-repeat;
-            background-image: url('./home/4_page_1@2x.png');
+            background-image: url('//static.chimeroi.com/home/home/4_page_1@2x.png');
         }
         .card-zu-2{
             @include size(240,490);
@@ -542,7 +542,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             bottom: 0;
             background-size: 100% 100%;
             background-repeat: no-repeat;
-            background-image: url('./home/4_page_2@2x.png');
+            background-image: url('//static.chimeroi.com/home/home/4_page_2@2x.png');
         }
         .card-zu-3{
             @include size(240,450);
@@ -551,7 +551,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             bottom: 0;
             background-size: 100% 100%;
             background-repeat: no-repeat;
-            background-image: url('./home/4_page_3@2x.png');
+            background-image: url('//static.chimeroi.com/home/home/4_page_3@2x.png');
         }
         
     }
@@ -579,44 +579,44 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 
 .screen-five{
-    @include screen-bg('./home/5_bg@2x.jpg');
+    @include screen-bg('//static.chimeroi.com/home/home/5_bg@2x.jpg');
      .screen-figure{
         z-index: 1;
         .card-people{
             @include size(320,299);
             @include postion($top:auto,$right:auto,$bottom:62,$left:250);
-            background-image: url('./home/5_peo.png');
+            background-image: url('//static.chimeroi.com/home/home/5_peo.png');
         }
         .card-zu-1{
             @include size(341,304);
             @include postion($top:auto,$right:auto,$bottom:303,$left:255);
-            background-image: url('./home/5_card_zu_1.png');
+            background-image: url('//static.chimeroi.com/home/home/5_card_zu_1.png');
         }
         .card-zu-2{
             @include size(512,299);
             @include postion($top:auto,$right:auto,$bottom:234,$left:183);
-            background-image: url('./home/5_card_zu_2.png');
+            background-image: url('//static.chimeroi.com/home/home/5_card_zu_2.png');
         }
         .card-zu-3{
             @include size(306,221);
             // @include postion($top:144,$right:754,$bottom:435,$left:380);
             @include postion($top:auto,$right:auto,$bottom:435,$left:380);
-            background-image: url('./home/5_card_zu_3.png');
+            background-image: url('//static.chimeroi.com/home/home/5_card_zu_3.png');
         }
         .card-num-1{
             @include size(458,356);
             @include postion($top:auto,$right:auto,$bottom:306,$left:326);
-            background-image: url('./home/5_num_1.png');
+            background-image: url('//static.chimeroi.com/home/home/5_num_1.png');
         }
         .card-num-2{
             @include size(175,202);
             @include postion($top:auto,$right:auto,$bottom:376,$left:175);
-            background-image: url('./home/5_num_2.png');
+            background-image: url('//static.chimeroi.com/home/home/5_num_2.png');
         }
         .card-num-3{
             @include size(189,376);
             @include postion($top:auto,$right:auto,$bottom:314,$left:341);
-            background-image: url('./home/5_num_3.png');
+            background-image: url('//static.chimeroi.com/home/home/5_num_3.png');
         }
     }
     .screen-text{

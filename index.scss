@@ -283,11 +283,60 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     overflow: hidden;
     display: flex;
 }
-@mixin btn-bg($width:60px){
+@mixin btn-bg($width:60px,$startColor:#2492fc,$endColor:#fff){
     width: $width;
     height: $width;
     display: inline-block;
     background-size: 100% 100%;
+    position: relative;
+    border-radius: 50%;
+    background-color: $startColor;
+    transition:  background-color 480ms linear 160ms;
+    overflow: hidden;
+    .btn-arrow-box{
+        .btn-arrow_1,.btn-arrow_2{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 20px;
+            height: 15px;
+            @if ($width == 30px){
+                width: 10px;
+                height: 7.5px;
+            }
+            background-size: 100% 100%;
+        }
+        .btn-arrow_1{
+            background-image: url("./home/jiantou_1@2x.png");
+            @if ($startColor == white){
+                background-image: url("./home/jiantou_2@2x.png");
+            }
+            transition: transform 480ms ease-out 160ms;
+        }
+        .btn-arrow_2{
+            background-image: url("./home/jiantou_2@2x.png");
+            @if ($startColor == white){
+                background-image: url("./home/jiantou_1@2x.png");
+            }
+            transition: transform 840ms ease-out 160ms;
+            transform: translateX(-$width);
+        }
+    }
+    
+    &:hover{
+        background-color:$endColor;
+        .btn-arrow-box{
+            .btn-arrow_1{
+                transform: translateX($width);
+            }
+            .btn-arrow_2{
+                transform: translateX(0);
+            }
+        }
+    }
     @content;
 }
 @mixin screen-bg($url){
@@ -351,7 +400,6 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     line-height: 30px;
                     .btn-bg{
                         @include btn-bg(60px);
-                        background-image: url('./home/2_btn.png');
                     }
                 }
             }
@@ -444,8 +492,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     }
                     .btn-bg{
                         vertical-align: middle;
-                        @include btn-bg(30px){
-                            background-image: url('./home/5_btn.png');
+                        @include btn-bg(30px,white,#46557F){
                             margin-right: 10px;
                         }
                         @include media-1280(){
@@ -509,7 +556,6 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 line-height: 30px;
                 .btn-bg{
                     @include btn-bg(60px);
-                    background-image: url('./home/2_btn.png');
                 }
             }
         }
@@ -570,8 +616,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 font-size: 16px;
                 line-height: 30px;
                 .btn-bg{
-                    @include btn-bg(60px);
-                    background-image: url('./home/5_btn.png');
+                    @include btn-bg(60px,white,#46557F);
                 }
             }
         }

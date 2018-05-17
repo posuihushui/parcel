@@ -50,7 +50,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 .screen-one{
     height: 100%;
     position: relative;
-    background: url('./home/bg.png') no-repeat;
+    background: url('./home/1_bg@2x.jpg') no-repeat;
     background-size: cover;
     overflow: hidden;
     .frame{
@@ -364,7 +364,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 // special;
 .screen-two{
-    @include screen-bg('./home/2_bg@2x.png');
+    @include screen-bg('./home/2_bg@2x.jpg');
     .screen-figure{
         z-index: 1;
         .card-people{
@@ -422,7 +422,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 
 .screen-three{
-    @include screen-bg('./home/3_bg@2x.png');
+    @include screen-bg('./home/3_bg@2x.jpg');
     .screen-figure{
         z-index: 1;
         .card-people{
@@ -523,7 +523,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 
 .screen-four{
-    @include screen-bg('./home/4_bg@2x.png');
+    @include screen-bg('./home/4_bg@2x.jpg');
     .screen-figure{
         z-index: 1;
         .card-zu-1{
@@ -579,7 +579,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 }
 
 .screen-five{
-    @include screen-bg('./home/5_bg@2x.png');
+    @include screen-bg('./home/5_bg@2x.jpg');
      .screen-figure{
         z-index: 1;
         .card-people{

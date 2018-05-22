@@ -1,6 +1,7 @@
-import "./setting.scss";
-import './screenAnimate.scss';
 import "./index.scss";
+import "./setting.scss";
+import "./screenAnimate.scss";
+
 
 let timeDelay = (time = 500) => (new Promise((resolve) => {
     setTimeout(() => {
@@ -86,12 +87,12 @@ function runLeaveQueue(preclass, [...notBtnClassNames]) {
         }, {
             time: 600,
             cb() {
-                [...notBtnClassNames,'btn-box'].forEach((e) => {
+                [...notBtnClassNames, 'btn-box'].forEach((e) => {
                     document.querySelector(`.${preclass} .${e}`).className = e + ' no-opacity';
                 });
             }
         }];
-    
+
     excuteQueue(queue);
 }
 // 第二屏切入
@@ -100,18 +101,26 @@ let secondScreenComeStalk = [
         time: 0, // 进入
         cb() {
             $('.screen-two .h-box').removeClass('no-opacity').addClass('screen-in-1');
-            $('.screen-two .p-box').removeClass('no-opacity').addClass('screen-in-2');
-            $('.screen-two .btn-box').removeClass('no-opacity').addClass('screen-in-3');
             $('.screen-two .card-people').removeClass('no-opacity').addClass('screen-in-6');
         }
     }, {
-        time: 500, // 500
+        time: 10,
+        cb() {
+            $('.screen-two .p-box').removeClass('no-opacity').addClass('screen-in-2');
+        }
+    }, {
+        time: 10,
+        cb() {
+            $('.screen-two .btn-box').removeClass('no-opacity').addClass('screen-in-3');
+        }
+    }, {
+        time: 800, // 500
         cb() {
             $('.screen-two .card-zu-1').removeClass('no-opacity').addClass('screen-in-4');
             $('.screen-two .card-zu-2').removeClass('no-opacity').addClass('screen-in-2');
         }
     }, {
-        time: 100, // 600
+        time: 600, // 600
         cb() {
             $('.screen-two .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
             $('.screen-two .card-zu-4').removeClass('no-opacity').addClass('screen-in-2');
@@ -140,9 +149,17 @@ let thirdScreenComeStalk = [
         time: 0, // 进入，不结束
         cb() {
             $('.screen-three .h-box').removeClass('no-opacity').addClass('screen-in-1');
-            $('.screen-three .p-box').removeClass('no-opacity').addClass('screen-in-2');
-            $('.screen-three .btn-box').removeClass('no-opacity').addClass('screen-in-3');
             $('.screen-three .card-people').removeClass('no-opacity').addClass('screen-in-8');
+        }
+    }, {
+        time: 10,
+        cb() {
+            $('.screen-three .p-box').removeClass('no-opacity').addClass('screen-in-2');
+        }
+    }, {
+        time: 10,
+        cb() {
+            $('.screen-three .btn-box').removeClass('no-opacity').addClass('screen-in-3');
         }
     }, {
         time: 500, // 500开始，1100结束
@@ -198,20 +215,24 @@ let fourthScreenComeStalk = [
         time: 0, // 进入，不结束
         cb() {
             $('.screen-four .h-box').removeClass('no-opacity').addClass('screen-in-1');
-            $('.screen-four .p-box').removeClass('no-opacity').addClass('screen-in-2');
-            $('.screen-four .btn-box').removeClass('no-opacity').addClass('screen-in-3');
             $('.screen-four .card-people').removeClass('no-opacity').addClass('screen-in-6');
+        }
+    }, {
+        time: 10,
+        cb() {
+            $('.screen-four .p-box').removeClass('no-opacity').addClass('screen-in-2');
+        }
+    }, {
+        time: 10,
+        cb() {
+            $('.screen-four .btn-box').removeClass('no-opacity').addClass('screen-in-3');
         }
     }, {
         time: 500, // 500开始，1100结束
         cb() {
             $('.screen-four .card-zu-1').removeClass('no-opacity').addClass('screen-in-4');
             $('.screen-four .card-zu-2').removeClass('no-opacity').addClass('screen-in-2');
-        }
-    }, {
-        time: 200, // 700开始,1300结束，+ 延时200s
-        cb() {
-            $('.screen-four .card-zu-3').removeClass('no-opacity').addClass('screen-in-4');
+            $('.screen-four .card-zu-3').removeClass('no-opacity').addClass('screen-in-9');
         }
     }];
 let fourthScreenNotBtnClassNames = ['card-zu-1', 'card-zu-2', 'card-zu-3', 'h-box', 'p-box'];
@@ -222,9 +243,17 @@ let fifthScreenComeStalk = [
         time: 0, // 进入，不结束
         cb() {
             $('.screen-five .h-box').removeClass('no-opacity').addClass('screen-in-1');
-            $('.screen-five .p-box').removeClass('no-opacity').addClass('screen-in-2');
-            $('.screen-five .btn-box').removeClass('no-opacity').addClass('screen-in-3');
             $('.screen-five .card-people').removeClass('no-opacity').addClass('screen-in-6');
+        }
+    }, {
+        time: 10,
+        cb() {
+            $('.screen-five .p-box').removeClass('no-opacity').addClass('screen-in-2');
+        }
+    }, {
+        time: 10,
+        cb() {
+            $('.screen-five .btn-box').removeClass('no-opacity').addClass('screen-in-3');
         }
     }, {
         time: 500, // 500开始，1100结束
@@ -242,15 +271,15 @@ let fifthScreenComeStalk = [
         cb() {
             $('.screen-five .card-num-2').removeClass('no-opacity').addClass('screen-in-5');
         }
-    } ,{
+    }, {
         time: 1100, // 1100
         cb() {
             $('.screen-five .card-zu-1').removeClass('screen-in-4').addClass('screen-move-1');
             $('.screen-five .card-zu-2').removeClass('screen-in-2').addClass('screen-move-2');
         }
-    },{
-        time:100, // 1200
-        cb(){
+    }, {
+        time: 100, // 1200
+        cb() {
             $('.screen-five .card-zu-3').removeClass('screen-in-4').addClass('screen-move-3');
             $('.screen-five .card-num-1').removeClass('no-opacity').addClass('screen-in-5');
             $('.screen-five .card-num-3').removeClass('no-opacity').addClass('screen-in-5');
@@ -260,7 +289,7 @@ let fifthScreenComeStalk = [
         cb() {
             $('.screen-five .card-num-2').removeClass('no-opacity').addClass('screen-in-5');
         }
-    },{
+    }, {
         time: 500, // 1700
         cb() {
             $('.screen-five .card-num-1').removeClass('screen-in-5').addClass('screen-move-1');
@@ -277,67 +306,96 @@ let fifthScreenComeStalk = [
         }
     }];
 let fifthScreenNotBtnClassNames = ['card-people', 'card-zu-1', 'card-zu-2', 'card-zu-3', 'card-num-1', 'card-num-2', 'card-num-3', 'h-box', 'p-box'];
+
 $(document).ready(function () {
-    $('#fullpage').fullpage({
-        //Scrolling
-        css3: true,
-        scrollingSpeed: 700,
-        // fitToSection: true,
-        fitToSectionDelay: 1000,
-        easing: 'easeInOutCubic',
-        easingcss3: 'ease',
-        touchSensitivity: 15,
 
-        //Accessibility
-        keyboardScrolling: true,
-        animateAnchor: true,
-        // recordHistory: true,
+    let isInitFullpage = false;
+    $(window).resize(function () {
+        let width = $(this).width();
+        if (width < 1024) {
 
-        //Custom selectors
-        sectionSelector: '.screen',
-
-        //events
-        onLeave: function (index, nextIndex, direction) {
-
-            if (index == 1 && direction == 'down') {
-                excuteQueue(secondScreenComeStalk);
+            // var pricingSwiper = new Swiper('.feature-images', {
+            //     direction: 'horizontal',
+            //     speed: 500,
+            //     autoplay: 2000,
+            //     autoplayDisableOnInteraction: false,
+            //     loop: true,
+            //     observer: true,
+            //     observeParents: true
+            // });
+            isInitFullpage && $('#fullpage').fullpage.destroy('all');
+            isInitFullpage = false;
+        } else {
+            if (isInitFullpage) {
+                return;
             }
+            isInitFullpage = true;
+            // resizeImg($('.demo-bg img')[0], $('.demo-bg img').data('src'));
 
-            if (index == 2 && direction == 'down') {
-                runLeaveQueue('screen-two', secondScreenNotBtnClassNames);
-                excuteQueue(thirdScreenComeStalk)
-            }else if (index == 2 && direction == 'up') {
-                runLeaveQueue('screen-two', secondScreenNotBtnClassNames);
-            }
+            $('#fullpage').fullpage({
+                //Scrolling
+                css3: true,
+                scrollingSpeed: 700,
+                // fitToSection: true,
+                fitToSectionDelay: 1000,
+                easing: 'easeInOutCubic',
+                easingcss3: 'ease',
+                touchSensitivity: 15,
 
-            if (index == 3 && direction == 'down') {
-                runLeaveQueue('screen-three', thirdScreenNotBtnClassNames);
-                excuteQueue(fourthScreenComeStalk);
-            }else if (index == 3 && direction == 'up') {
-                excuteQueue(secondScreenComeStalk);
-                runLeaveQueue('screen-three', thirdScreenNotBtnClassNames);
-            }
+                //Accessibility
+                keyboardScrolling: true,
+                animateAnchor: true,
+                // recordHistory: true,
+                scrollOverflow: true,
+                scrollOverflowOptions: {
+                    scrollbars: false
+                },
+                //Custom selectors
+                sectionSelector: '.screen',
 
-            if (index == 4 && direction == 'down') {
-                runLeaveQueue('screen-four', fourthScreenNotBtnClassNames);
-                excuteQueue(fifthScreenComeStalk);
-            }else if (index == 4 && direction == 'up') {
-                runLeaveQueue('screen-four', fourthScreenNotBtnClassNames);
-                excuteQueue(thirdScreenComeStalk);
-            }
+                //events
+                onLeave: function (index, nextIndex, direction) {
 
-            if (index == 5 && direction == 'down') {
-                runLeaveQueue('screen-five', fifthScreenNotBtnClassNames);
-            } else if (index == 5 && direction == 'up') {
-                runLeaveQueue('screen-five', fifthScreenNotBtnClassNames);
-                excuteQueue(fourthScreenComeStalk);
-            }
+                    if (index == 1 && direction == 'down') {
+                        excuteQueue(secondScreenComeStalk);
+                    }
 
-            if (index == 6 && direction == 'up') {
-                excuteQueue(fifthScreenComeStalk);
-            }
+                    if (index == 2 && direction == 'down') {
+                        runLeaveQueue('screen-two', secondScreenNotBtnClassNames);
+                        excuteQueue(thirdScreenComeStalk)
+                    } else if (index == 2 && direction == 'up') {
+                        runLeaveQueue('screen-two', secondScreenNotBtnClassNames);
+                    }
 
+                    if (index == 3 && direction == 'down') {
+                        runLeaveQueue('screen-three', thirdScreenNotBtnClassNames);
+                        excuteQueue(fourthScreenComeStalk);
+                    } else if (index == 3 && direction == 'up') {
+                        excuteQueue(secondScreenComeStalk);
+                        runLeaveQueue('screen-three', thirdScreenNotBtnClassNames);
+                    }
 
+                    if (index == 4 && direction == 'down') {
+                        runLeaveQueue('screen-four', fourthScreenNotBtnClassNames);
+                        excuteQueue(fifthScreenComeStalk);
+                    } else if (index == 4 && direction == 'up') {
+                        runLeaveQueue('screen-four', fourthScreenNotBtnClassNames);
+                        excuteQueue(thirdScreenComeStalk);
+                    }
+
+                    if (index == 5 && direction == 'down') {
+                        runLeaveQueue('screen-five', fifthScreenNotBtnClassNames);
+                    } else if (index == 5 && direction == 'up') {
+                        runLeaveQueue('screen-five', fifthScreenNotBtnClassNames);
+                        excuteQueue(fourthScreenComeStalk);
+                    }
+
+                    if (index == 6 && direction == 'up') {
+                        excuteQueue(fifthScreenComeStalk);
+                    }
+                }
+            });
         }
-    });
+
+    }).trigger('resize');
 })

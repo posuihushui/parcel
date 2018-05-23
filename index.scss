@@ -3,12 +3,6 @@ html,body{height: 100%;min-width: 320px;}
 // $height:800;
 // $width:1440;
 $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
-@mixin width($width:1440){
-    width: $width + px;
-}
-@mixin height($height:800){
-    height: $height + px;
-}
 @function toPx($value) {
     @if($value == auto){
         @return auto;
@@ -25,13 +19,9 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     background-repeat: no-repeat;
     // background-position: center center;
 }
-@mixin size($width:auto,$height:auto,$scale:1){
+@mixin size($width:auto,$height:auto){
     width: $width + px;
     height: $height + px;
-    @include media-1280(){
-       width: $scale*$width + px;
-       height: $scale*$height + px;
-    }
 }
 @mixin media-1280(){
     @media (max-width:1279px) {
@@ -209,7 +199,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     background-image: url('//static.chimeroi.com/home/home/screen4@2x-v2.png');
                 }
                 .part1{
-                    @include size(160,88,.8);
+                    @include size(160,88);
                     @include postion($top:auto,$right:auto,$bottom:177,$left:0);
                     background-image: url('//static.chimeroi.com/home/home/part_10.png');
                 }

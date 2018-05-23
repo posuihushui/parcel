@@ -43,6 +43,9 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
         @content;
     }
 }
+.animate-box{
+    
+}
 .screen-box{
     height: 100%;
 }
@@ -115,7 +118,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             .part-screen-bg{
                 @include size(830,515);
                 @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                background-image: url('//static.chimeroi.com/home/home/mokeup.png');
+                background-image: url('//static.chimeroi.com/home/home/mokeup@2x-v2.png');
             }
         }
         
@@ -129,7 +132,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 .figure-content{
                     @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                    background-image: url('//static.chimeroi.com/home/home/screen1@2x.png');
+                    background-image: url('//static.chimeroi.com/home/home/screen1@2x-v2.png');
                 }
                 .part1{
                     @include size(114,175,.6);
@@ -160,7 +163,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 .figure-content{
                     @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                    background-image: url('//static.chimeroi.com/home/home/screen2@2x.png');
+                    background-image: url('//static.chimeroi.com/home/home/screen2@2x-v2.png');
                 }
                 .part1{
                     @include size(140,200);
@@ -185,7 +188,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 .figure-content{
                     @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                    background-image: url('//static.chimeroi.com/home/home/screen3@2x.png');
+                    background-image: url('//static.chimeroi.com/home/home/screen3@2x-v2.png');
                 }
                 .part1{
                     @include size(230,150,.6);
@@ -210,7 +213,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 .figure-content{
                     @include size(830,515);
                     @include postion($top:auto,$right:0,$bottom:36,$left:auto);
-                    background-image: url('//static.chimeroi.com/home/home/screen4@2x.png');
+                    background-image: url('//static.chimeroi.com/home/home/screen4@2x-v2.png');
                 }
                 .part1{
                     @include size(160,88,.8);

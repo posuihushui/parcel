@@ -3,11 +3,11 @@ html,body{height: 100%;min-width: 320px;}
 // $height:800;
 // $width:1440;
 $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
-@function toPx($value) {
+@function toPx($value,$scale:1) {
     @if($value == auto){
         @return auto;
     }
-    @return $value + px;
+    @return $value*$scale+ px;
 }
 @mixin postion($top:auto,$right:auto,$bottom:auto,$left:auto){
     position: absolute;
@@ -17,11 +17,21 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     left: toPx($left);
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    @include media-1280(){
+        top: toPx($top,.7);
+        right: toPx($right,.7);
+        bottom: toPx($bottom,.7);
+        left: toPx($left,.7);
+    }
     // background-position: center center;
 }
 @mixin size($width:auto,$height:auto){
     width: $width + px;
     height: $height + px;
+    @include media-1280(){
+        width: $width*.7 + px;
+        height: $height*.7 + px;
+    }
 }
 @mixin media-1280(){
     @media (max-width:1279px) {
@@ -33,12 +43,29 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
         @content;
     }
 }
+@mixin media-1439(){
+    @media (max-width:1439px) {
+        @content;
+    }
+}
 .animate-box{
     position: absolute;
     right: 0;
     bottom: 0;
     width: 1160px;
     height: 730px;
+    @include media-1439(){
+        right: -50px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    @include media-1280(){
+        width: 1160*.7 + px;
+        height: 730*.7 + px;
+        right: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 .screen-box{
     height: 100%;
@@ -51,6 +78,8 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     background-size: cover;
     overflow: hidden;
     .frame-box{
+        width: 100%;
+        height: 100%;
         @include media-1440(){
             position: absolute;
             width: 1490px;
@@ -76,6 +105,14 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     width: 560px;
                     left: 120px;
                 }
+                @include media-1439(){
+                    width: 400px;
+                    left: 120px;
+                }
+                @include media-1280(){
+                    width: 350px;
+                    left: 60px;
+                }
                 transform: translateY(-50%);
                 z-index: 2;
                 .title{
@@ -85,8 +122,8 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     color:#1e234b;
                     margin-bottom: 10px;
                     @include media-1280(){
-                        font-size: 64px;
-                        line-height: 64px;
+                        font-size: 72px;
+                        line-height: 72px;
                     }
                     .color-bule{
                         font-family: Gotham Bold;
@@ -250,7 +287,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             z-index: 2;
             left: 0;
             right: 0;
-            bottom: 111px;
+            bottom: 146px;
             cursor: pointer;
             margin: auto;
             background-image: linear-gradient(to bottom, #31a5ff, #1197ff);

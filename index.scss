@@ -28,6 +28,11 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
         @content;
     }
 }
+@mixin media-1440(){
+    @media (min-width:1440px) {
+        @content;
+    }
+}
 .animate-box{
     position: absolute;
     right: 0;
@@ -45,6 +50,16 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     background: url('//static.chimeroi.com/home/home/1_bg@2x.jpg') no-repeat;
     background-size: cover;
     overflow: hidden;
+    .frame-box{
+        @include media-1440(){
+            position: absolute;
+            width: 1490px;
+            height: 730px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
     .frame{
         width: 100%;
         height: 100%;
@@ -56,11 +71,13 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             height: 100%;
             .feature-text{
                 position: absolute;
-                top: 50vh;
-                left: 7%;
+                top: 50%;
+                @include media-1440(){
+                    width: 560px;
+                    left: 120px;
+                }
                 transform: translateY(-50%);
                 z-index: 2;
-                max-width: calc(100% - 840px);
                 .title{
                     font-family: Gotham Light;
                     font-size: 80px;
@@ -233,7 +250,7 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
             z-index: 2;
             left: 0;
             right: 0;
-            bottom: 146px;
+            bottom: 111px;
             cursor: pointer;
             margin: auto;
             background-image: linear-gradient(to bottom, #31a5ff, #1197ff);

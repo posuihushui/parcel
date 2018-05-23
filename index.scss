@@ -9,23 +9,18 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
 @mixin height($height:800){
     height: $height + px;
 }
-@function toPercent($value,$denominator) {
+@function toPx($value) {
     @if($value == auto){
         @return auto;
     }
-    @if($denominator == 800){
-        @return $value*100/$denominator + vh;
-    }
-    @if($denominator == 1440){
-        @return $value*100/$denominator + vw;
-    }
+    @return $value + px;
 }
 @mixin postion($top:auto,$right:auto,$bottom:auto,$left:auto){
     position: absolute;
-    top: toPercent($top,800);
-    right: toPercent($right,1440);
-    bottom: toPercent($bottom,800);
-    left: toPercent($left,1440);
+    top: toPx($top);
+    right: toPx($right);
+    bottom: toPx($bottom);
+    left: toPx($left);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     // background-position: center center;
@@ -44,7 +39,11 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
     }
 }
 .animate-box{
-    
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 1160px;
+    height: 730px;
 }
 .screen-box{
     height: 100%;
@@ -135,26 +134,20 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     background-image: url('//static.chimeroi.com/home/home/screen1@2x-v2.png');
                 }
                 .part1{
-                    @include size(114,175,.6);
-                    @include postion($top:auto,$right:auto,$bottom:85,$left:350);
-                    @include media-1280(){
-                        @include postion(auto, auto, 190, 85);
-                    }
+                    @include size(114,175);
+                    @include postion($top:auto,$right:auto,$bottom:85,$left:20);
                     background-image: url('//static.chimeroi.com/home/home/part_1.png');
                 }
                 .part2{
                     @include size(163,40);
-                    @include postion($top:auto,$right:10,$bottom:240,$left:auto);
+                    @include postion($top:auto,$right:60,$bottom:207,$left:auto);
                     box-shadow: 0 5px 10px 0 rgba(77, 240, 32, 0.4);
                     background-image: url('//static.chimeroi.com/home/home/part_2.png');
                     border-radius: 20px;
                 }
                 .part3{
-                    @include size(294,212,.8);
-                    @include postion($top:85,$right:auto,$bottom:auto,$left:380);
-                    @include media-1280(){
-                        @include postion(160, auto, auto, 220);
-                    }
+                    @include size(294,212);
+                    @include postion($top:125,$right:auto,$bottom:auto,$left:50);
                     background-image: url('//static.chimeroi.com/home/home/part_3.png');
                 }
             }
@@ -167,19 +160,19 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 }
                 .part1{
                     @include size(140,200);
-                    @include postion($top:auto,$right:20,$bottom:146,$left:auto);
+                    @include postion($top:auto,$right:70,$bottom:111,$left:auto);
                     background-image: url('//static.chimeroi.com/home/home/part_4.png');
                     box-shadow: 0 10px 20px 0 rgba(57, 145, 230, 0.5);
                     border-radius: 12px;
                 }
                 .part2{
                     @include size(116,77);
-                    @include postion($top:202,$right:777,$bottom:auto,$left:auto);
+                    @include postion($top:167,$right:auto,$bottom:auto,$left:277);
                     background-image: url('//static.chimeroi.com/home/home/part_5.png');
                 }
                 .part3{
-                    @include size(230,150,.8);
-                    @include postion($top:85,$right:auto,$bottom:auto,$left:380);
+                    @include size(230,150);
+                    @include postion($top:50,$right:auto,$bottom:auto,$left:108);
                     background-image: url('//static.chimeroi.com/home/home/part_6.png');
                 }
             }
@@ -191,20 +184,20 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                     background-image: url('//static.chimeroi.com/home/home/screen3@2x-v2.png');
                 }
                 .part1{
-                    @include size(230,150,.6);
-                    @include postion($top:auto,$right:auto,$bottom:110,$left:430);
+                    @include size(230,150);
+                    @include postion($top:auto,$right:auto,$bottom:75,$left:160);
                     background-image: url('//static.chimeroi.com/home/home/part_7.png');
                 }
                 .part2{
                     @include size(200,96);
-                    @include postion($top:auto,$right:20,$bottom:284,$left:auto);
+                    @include postion($top:auto,$right:70,$bottom:249,$left:auto);
                     background-image: url('//static.chimeroi.com/home/home/part_8.png');
                     box-shadow: 0 10px 20px 0 rgba(81, 156, 227, 0.3);
                     border-radius: 6px;
                 }
                 .part3{
-                    @include size(184,122,.8);
-                    @include postion($top:140,$right:auto,$bottom:auto,$left:330);
+                    @include size(184,122);
+                    @include postion($top:105,$right:auto,$bottom:auto,$left:60);
                     background-image: url('//static.chimeroi.com/home/home/part_9.png');
                 }
             }
@@ -217,19 +210,19 @@ $font-family:"SF UI Text", "Helvetica", "Arial", "san-serif";
                 }
                 .part1{
                     @include size(160,88,.8);
-                    @include postion($top:auto,$right:auto,$bottom:212,$left:270);
+                    @include postion($top:auto,$right:auto,$bottom:177,$left:0);
                     background-image: url('//static.chimeroi.com/home/home/part_10.png');
                 }
                 .part2{
                     @include size(160,160);
-                    @include postion($top:190,$right:150,$bottom:auto,$left:auto);
+                    @include postion($top:155,$right:220,$bottom:auto,$left:auto);
                     background-image: url('//static.chimeroi.com/home/home/part_11.png');
                     box-shadow: 0 10px 20px 0 rgba(173, 220, 238, 0.5);
                     border-radius: 6px;
                 }
                 .part3{
                     @include size(193,123);
-                    @include postion($top:100,$right:auto,$bottom:auto,$left:600);
+                    @include postion($top:65,$right:auto,$bottom:auto,$left:330);
                     background-image: url('//static.chimeroi.com/home/home/part_12.png');
                 }
             }

@@ -1,6 +1,5 @@
-import "./index.scss";
-import "./setting.scss";
-import "./screenAnimate.scss";
+import './screenAnimate.scss';
+import './index.scss';
 
 
 let timeDelay = (time = 500) => (new Promise((resolve) => {
@@ -314,15 +313,15 @@ $(document).ready(function () {
         let width = $(this).width();
         if (width < 1024) {
 
-            // var pricingSwiper = new Swiper('.feature-images', {
-            //     direction: 'horizontal',
-            //     speed: 500,
-            //     autoplay: 2000,
-            //     autoplayDisableOnInteraction: false,
-            //     loop: true,
-            //     observer: true,
-            //     observeParents: true
-            // });
+            var pricingSwiper = new Swiper('.feature-images', {
+                direction: 'horizontal',
+                speed: 500,
+                autoplay: 2000,
+                autoplayDisableOnInteraction: false,
+                loop: true,
+                observer: true,
+                observeParents: true
+            });
             isInitFullpage && $('#fullpage').fullpage.destroy('all');
             isInitFullpage = false;
         } else {
@@ -330,7 +329,7 @@ $(document).ready(function () {
                 return;
             }
             isInitFullpage = true;
-            // resizeImg($('.demo-bg img')[0], $('.demo-bg img').data('src'));
+            resizeImg($('.demo-bg img')[0], $('.demo-bg img').data('src'));
 
             $('#fullpage').fullpage({
                 //Scrolling
